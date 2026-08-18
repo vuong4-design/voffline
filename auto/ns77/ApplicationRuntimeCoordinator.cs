@@ -169,7 +169,7 @@ internal class ApplicationRuntimeCoordinator
 			{
 				break;
 			}
-			if (!LicenseRuntimeCoordinator.bool_0)
+			if (!LicenseRuntimeCoordinator.versionCheckCompleted)
 			{
 				continue;
 			}
@@ -228,7 +228,7 @@ internal class ApplicationRuntimeCoordinator
 						{
 							bool flag2 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num8].machineIdentityHash == array3[k].uint_0;
 							bool flag3 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num8].authorizationExpirationTicks > LicenseRuntimeCoordinator.networkTimeTicks;
-							if ((!flag2 || !flag3) && (RemoteEndpointCatalog.DownloadBaseUrls.Length > LicenseRuntimeCoordinator.int_1 || (ulong)LicenseRuntimeCoordinator.long_0 > 0uL))
+							if ((!flag2 || !flag3) && (RemoteEndpointCatalog.DownloadBaseUrls.Length > LicenseRuntimeCoordinator.remoteEndpointAttemptCount || (ulong)LicenseRuntimeCoordinator.long_0 > 0uL))
 							{
 								num8++;
 								continue;

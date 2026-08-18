@@ -10477,7 +10477,7 @@ public class Form1 : Form
 				CommonUtility.RemoveStringFromArray(ref CommonUtility.string_17, CommonUtility.string_17[0]);
 			}
 		}
-		if (!LicenseRuntimeCoordinator.bool_0 && !testModeEnabled)
+		if (!LicenseRuntimeCoordinator.versionCheckCompleted && !testModeEnabled)
 		{
 			return;
 		}
@@ -10527,9 +10527,9 @@ public class Form1 : Form
 			}
 			loginAccountScanIndex++;
 		}
-		if (LicenseRuntimeCoordinator.int_2 == 1)
+		if (LicenseRuntimeCoordinator.licenseCoordinatorSignal == 1)
 		{
-			LicenseRuntimeCoordinator.int_2 = 0;
+			LicenseRuntimeCoordinator.licenseCoordinatorSignal = 0;
 			buttonAdd.Visible = true;
 			buttonAdd.Enabled = true;
 			LicenseRuntimeCoordinator.GetLicenseStatusLines();
@@ -11206,7 +11206,7 @@ public class Form1 : Form
 			}
 			CommonUtility.RemoveIntFromArray(ref int_132, num29);
 		}
-		if (!LicenseRuntimeCoordinator.bool_0)
+		if (!LicenseRuntimeCoordinator.versionCheckCompleted)
 		{
 			return;
 		}
@@ -11544,7 +11544,7 @@ public class Form1 : Form
 		if (!(text == usageId))
 		{
 			usageId = text.Trim();
-			LicenseRuntimeCoordinator.int_2 = 2;
+			LicenseRuntimeCoordinator.licenseCoordinatorSignal = 2;
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "textIDSudung", usageId, "", 0);
 			richTextBoxBHO.Text = "Auto Free 100% cho JX Offline by MEL";
 		}
@@ -11555,7 +11555,7 @@ public class Form1 : Form
 		if (!(defaultUsageIdPlaceholder == usageId))
 		{
 			usageId = defaultUsageIdPlaceholder;
-			LicenseRuntimeCoordinator.int_2 = 2;
+			LicenseRuntimeCoordinator.licenseCoordinatorSignal = 2;
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "textIDSudung", usageId, "", 0);
 			textBoxIDSudung.Text = usageId;
 			richTextBoxBHO.Text = "Auto Free 100% cho JX Offline by MEL";

@@ -158,7 +158,7 @@ internal class LoginAutomationCoordinator
 			{
 				continue;
 			}
-			if (!Form1.testModeEnabled && (Form1.updateAvailable || LicenseRuntimeCoordinator.bool_1 || LicenseRuntimeCoordinator.latestVersionText == null || LicenseRuntimeCoordinator.latestVersionText == string.Empty || Form1.latestVersionCode > Form1.currentVersionCode))
+			if (!Form1.testModeEnabled && (Form1.updateAvailable || LicenseRuntimeCoordinator.restrictedEnvironmentDetected || LicenseRuntimeCoordinator.latestVersionText == null || LicenseRuntimeCoordinator.latestVersionText == string.Empty || Form1.latestVersionCode > Form1.currentVersionCode))
 			{
 				PendingAccountIndexes = null;
 				continue;

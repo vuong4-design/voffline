@@ -106,7 +106,7 @@ public class FormAntivirus : Form
 			}
 			Thread.Sleep(10);
 		}
-		while (!LicenseRuntimeCoordinator.bool_0 || num4 == 0L || CommonUtility.uint_1 == 0 || CommonUtility.int_1 <= 0);
+		while (!LicenseRuntimeCoordinator.versionCheckCompleted || num4 == 0L || CommonUtility.uint_1 == 0 || CommonUtility.int_1 <= 0);
 		int int_ = 0;
 		byte[] byte_ = new byte[2] { 1, 1 };
 		WindowsInteropHelper.WriteProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_1 * 4, byte_, 2, ref int_);

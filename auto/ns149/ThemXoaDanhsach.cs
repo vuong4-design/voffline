@@ -189,7 +189,7 @@ public class ThemXoaDanhsach : Form
 		{
 			num2 = trackedProcessEntries.Length;
 		}
-		string text = "Tổng có " + (num + num2) + " nhân vật (trái: " + num + "; phải: " + num2 + ") | Limit " + LicenseRuntimeCoordinator.int_7;
+		string text = "Tổng có " + (num + num2) + " nhân vật (trái: " + num + "; phải: " + num2 + ") | Limit " + LicenseRuntimeCoordinator.licensedAccountLimit;
 		if (labelThongtin.Text != text)
 		{
 			labelThongtin.Text = text;
@@ -498,7 +498,7 @@ public class ThemXoaDanhsach : Form
 
 	private void buttonDemqua_Click(object sender, EventArgs e)
 	{
-		if (selectedAvailableProcessRowIndex < 0 || (availableProcessEntries != null && listView2.Items.Count >= LicenseRuntimeCoordinator.int_7))
+		if (selectedAvailableProcessRowIndex < 0 || (availableProcessEntries != null && listView2.Items.Count >= LicenseRuntimeCoordinator.licensedAccountLimit))
 		{
 			return;
 		}
@@ -551,7 +551,7 @@ public class ThemXoaDanhsach : Form
 	{
 		int[] array = null;
 		labelThongtin.Text = "Thông tin: ...";
-		while (availableProcessEntries != null && availableProcessEntries.Length != 0 && (availableProcessEntries == null || listView2.Items.Count < LicenseRuntimeCoordinator.int_7))
+		while (availableProcessEntries != null && availableProcessEntries.Length != 0 && (availableProcessEntries == null || listView2.Items.Count < LicenseRuntimeCoordinator.licensedAccountLimit))
 		{
 			int num = FindListViewRowIndexById(listView1, availableProcessEntries[0].processId);
 			if (0 <= num)

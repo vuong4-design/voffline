@@ -79,17 +79,17 @@ public class LicenseRuntimeCoordinator
 
 	public static long long_0 = -1L;
 
-	public static int int_1 = 0;
+	public static int remoteEndpointAttemptCount = 0;
 
 	public static AuxiliaryLicensePolicy[] auxiliaryLicensePolicies = null;
 
-	public static int int_2 = 0;
+	public static int licenseCoordinatorSignal = 0;
 
-	public static bool bool_0 = false;
+	public static bool versionCheckCompleted = false;
 
 	public static long networkTimeTicks = 0L;
 
-	public static bool bool_1 = false;
+	public static bool restrictedEnvironmentDetected = false;
 
 	public static string string_3 = null;
 
@@ -97,7 +97,7 @@ public class LicenseRuntimeCoordinator
 
 	public static string importantNoticeText = null;
 
-	public static long long_2 = 0L;
+	public static long supplementalLicenseExpirationTicks = 0L;
 
 	public static long long_3 = 0L;
 
@@ -105,7 +105,7 @@ public class LicenseRuntimeCoordinator
 
 	public static LicenseState licenseState = default(LicenseState);
 
-	public static int int_4 = 0;
+	public static int baseLicenseFetchState = 0;
 
 	public static MapTravelConnection[] gstruct28_0 = null;
 
@@ -113,7 +113,7 @@ public class LicenseRuntimeCoordinator
 
 	public static int int_6 = 0;
 
-	public static int int_7 = 1000;
+	public static int licensedAccountLimit = 1000;
 
 	public static string string_6 = string.Empty;
 
@@ -157,33 +157,33 @@ public class LicenseRuntimeCoordinator
 				licensedAccountLimit = 0,
 				licenseIdentityHash = 0u
 			};
-			int_4 = 0;
+			baseLicenseFetchState = 0;
 			num6 = 0;
 			num7 = 0;
-			long_2 = 0L;
-			int_2 = 0;
+			supplementalLicenseExpirationTicks = 0L;
+			licenseCoordinatorSignal = 0;
 			while (true)
 			{
 				Thread.Sleep(1300);
-				if (CommonUtility.bool_0)
+				if (CommonUtility.versionCheckCompleted)
 				{
 					return;
 				}
-				if (int_2 == 2)
+				if (licenseCoordinatorSignal == 2)
 				{
 					break;
 				}
 				num--;
 				if (num <= 0)
 				{
-					bool_1 = bool_1 || smethod_2();
+					restrictedEnvironmentDetected = restrictedEnvironmentDetected || DetectRestrictedRuntimeArtifacts();
 					num = 1800;
 				}
 				if (!Form1.mainRuntimeInitialized || CommonUtility.uint_0 == 0)
 				{
 					continue;
 				}
-				if (bool_1)
+				if (restrictedEnvironmentDetected)
 				{
 					Form1.characterAccountConfig_1 = null;
 					continue;
@@ -213,7 +213,7 @@ public class LicenseRuntimeCoordinator
 					int num13 = BitConverter.ToInt32(array2, 0);
 					if (num13 > 0)
 					{
-						text = ReadAndClearLengthPrefixedProcessString(num10, num12, bool_3: true);
+						text = ReadAndClearLengthPrefixedProcessString(num10, num12, decodeGameText: true);
 						CommonUtility.long_0 = CommonUtility.ParseInt64OrZero(text);
 					}
 				}
@@ -237,7 +237,7 @@ public class LicenseRuntimeCoordinator
 							fetchCompleted = false,
 							int_0 = i + 1
 						};
-						new Thread(array4[i].method_6).Start();
+						new Thread(array4[i].FetchVersionMetadata).Start();
 					}
 					Thread.Sleep(800);
 				}
@@ -253,7 +253,7 @@ public class LicenseRuntimeCoordinator
 								num3 = 0;
 								continue;
 							}
-							if (bool_0)
+							if (versionCheckCompleted)
 							{
 								num3 = 2;
 								continue;
@@ -288,15 +288,15 @@ public class LicenseRuntimeCoordinator
 					break;
 				case 2:
 					CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, CommonUtility.DecodeCharArrayToString(CommonUtility.char_22));
-					int_2 = 1;
-					bool_0 = true;
+					licenseCoordinatorSignal = 1;
+					versionCheckCompleted = true;
 					num3 = 3;
 					num7 = 0;
 					num9 = CommonUtility.GetCurrentTicks();
 					break;
 				}
 				num2--;
-				if (num2 <= 0 && (bool_0 || num3 == 3))
+				if (num2 <= 0 && (versionCheckCompleted || num3 == 3))
 				{
 					for (int k = 0; k < array3.Length; k++)
 					{
@@ -312,7 +312,7 @@ public class LicenseRuntimeCoordinator
 					if (licenseState.licenseValid)
 					{
 						licenseState.licenseValid = licenseState.licenseFileSuffix != string.Empty && licenseState.licenseIdentityHash != 0 && licenseState.licenseExpirationTicks > networkTimeTicks && networkTimeTicks > 636758336219996160L;
-						int_2 = 1;
+						licenseCoordinatorSignal = 1;
 					}
 				}
 				if (networkTimeTicks <= 0L)
@@ -323,7 +323,7 @@ public class LicenseRuntimeCoordinator
 					}
 					continue;
 				}
-				if (num5 == 0 && HardwareLicenseIdentity.string_0 != string.Empty && HardwareLicenseIdentity.bool_0)
+				if (num5 == 0 && HardwareLicenseIdentity.string_0 != string.Empty && HardwareLicenseIdentity.versionCheckCompleted)
 				{
 					num5 = 1;
 					string text2 = CommonUtility.DecodeLengthShiftedString(CommonUtility.string_5);
@@ -338,13 +338,13 @@ public class LicenseRuntimeCoordinator
 							fetchCompleted = false,
 							int_0 = l + 1
 						};
-						new Thread(array5[l].method_3).Start();
+						new Thread(array5[l].FetchHardwareLicensePayload).Start();
 					}
 					Thread.Sleep(800);
 				}
-				if (int_4 == 0 && licenseState.licenseFileSuffix == string.Empty)
+				if (baseLicenseFetchState == 0 && licenseState.licenseFileSuffix == string.Empty)
 				{
-					int_4 = 1;
+					baseLicenseFetchState = 1;
 					string object_2 = "license/" + Form1.usageId + ".txt";
 					if (Form1.usageId.IndexOf(Form1.defaultUsageIdPlaceholder) != 0)
 					{
@@ -358,12 +358,12 @@ public class LicenseRuntimeCoordinator
 								int_0 = m + 1,
 								byte_0 = array
 							};
-							new Thread(array6[m].method_5).Start();
+							new Thread(array6[m].FetchBaseLicensePayload).Start();
 						}
 					}
 					Thread.Sleep(800);
 				}
-				if (int_4 == 1)
+				if (baseLicenseFetchState == 1)
 				{
 					bool flag = false;
 					for (int n = 0; n < array6.Length; n++)
@@ -376,11 +376,11 @@ public class LicenseRuntimeCoordinator
 					}
 					if (!flag || licenseState.licenseIdentityHash != 0)
 					{
-						int_4 = 2;
-						int_2 = 1;
+						baseLicenseFetchState = 2;
+						licenseCoordinatorSignal = 1;
 					}
 				}
-				if (num6 == 0 && long_2 <= 0L && licenseState.licenseFileSuffix != string.Empty && licenseState.licenseValid)
+				if (num6 == 0 && supplementalLicenseExpirationTicks <= 0L && licenseState.licenseFileSuffix != string.Empty && licenseState.licenseValid)
 				{
 					num6 = 1;
 					string object_3 = "license/" + Form1.usageId + "_" + licenseState.licenseFileSuffix + ".txt";
@@ -393,7 +393,7 @@ public class LicenseRuntimeCoordinator
 							fetchCompleted = false,
 							int_0 = num15 + 1
 						};
-						new Thread(array7[num15].method_4).Start();
+						new Thread(array7[num15].FetchSupplementalLicensePayload).Start();
 					}
 					Thread.Sleep(1500);
 				}
@@ -419,7 +419,7 @@ public class LicenseRuntimeCoordinator
 							fetchCompleted = false,
 							int_0 = num16 + 1
 						};
-						new Thread(array8[num16].method_2).Start();
+						new Thread(array8[num16].FetchAdvertisementCatalog).Start();
 						Thread.Sleep(800);
 					}
 				}
@@ -428,31 +428,31 @@ public class LicenseRuntimeCoordinator
 		}
 	}
 
-	private static string ReadAndClearLengthPrefixedProcessString(int int_8, uint uint_0, bool bool_3 = false)
+	private static string ReadAndClearLengthPrefixedProcessString(int processHandle, uint address, bool decodeGameText = false)
 	{
 		int int_9 = 0;
 		byte[] array = new byte[4];
 		string result = string.Empty;
-		WindowsInteropHelper.ReadProcessMemory(int_8, uint_0, array, 4, ref int_9);
+		WindowsInteropHelper.ReadProcessMemory(processHandle, address, array, 4, ref int_9);
 		int num = BitConverter.ToInt32(array, 0);
 		if (num > 0)
 		{
 			byte[] array2 = new byte[num];
-			WindowsInteropHelper.ReadProcessMemory(int_8, uint_0 + 4, array2, num, ref int_9);
-			result = ((!bool_3) ? GameTextEncodingHelper.DecodeNullTerminatedUtf16Le(array2) : GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2));
+			WindowsInteropHelper.ReadProcessMemory(processHandle, address + 4, array2, num, ref int_9);
+			result = ((!decodeGameText) ? GameTextEncodingHelper.DecodeNullTerminatedUtf16Le(array2) : GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2));
 			if (array2[0] != 0)
 			{
 				for (int i = 0; i < array2.Length; i++)
 				{
 					array2[i] = 0;
 				}
-				WindowsInteropHelper.WriteProcessMemory(int_8, uint_0, array2, num, ref int_9);
+				WindowsInteropHelper.WriteProcessMemory(processHandle, address, array2, num, ref int_9);
 			}
 		}
 		return result;
 	}
 
-	private static bool smethod_2()
+	private static bool DetectRestrictedRuntimeArtifacts()
 	{
 		bool flag = false;
 		try

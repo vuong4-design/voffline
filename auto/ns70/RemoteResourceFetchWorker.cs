@@ -48,7 +48,7 @@ internal class RemoteResourceFetchWorker
 
 	public static string string_2;
 
-	public void method_0()
+	public void FetchAuxiliaryLicensePoliciesAndAdvanceEndpoint()
 	{
 		if (LicenseRuntimeCoordinator.long_0 < 0L)
 		{
@@ -56,15 +56,15 @@ internal class RemoteResourceFetchWorker
 		}
 		try
 		{
-			method_1();
+			FetchAuxiliaryLicensePolicies();
 		}
 		catch
 		{
 		}
-		LicenseRuntimeCoordinator.int_1++;
+		LicenseRuntimeCoordinator.remoteEndpointAttemptCount++;
 	}
 
-	public void method_1()
+	public void FetchAuxiliaryLicensePolicies()
 	{
 		while (true)
 		{
@@ -185,7 +185,7 @@ internal class RemoteResourceFetchWorker
 		fetchCompleted = true;
 	}
 
-	public void method_2()
+	public void FetchAdvertisementCatalog()
 	{
 		Random random = new Random();
 		int num = random.Next(100, 400);
@@ -252,7 +252,7 @@ internal class RemoteResourceFetchWorker
 		fetchCompleted = true;
 	}
 
-	public void method_3()
+	public void FetchHardwareLicensePayload()
 	{
 		while (true)
 		{
@@ -273,20 +273,20 @@ internal class RemoteResourceFetchWorker
 			if (text != null && !(text == string.Empty))
 			{
 				LicenseRuntimeCoordinator.string_6 = text;
-				LicenseRuntimeCoordinator.int_2 = 1;
+				LicenseRuntimeCoordinator.licenseCoordinatorSignal = 1;
 			}
 			break;
 		}
 		fetchCompleted = true;
 	}
 
-	public void method_4()
+	public void FetchSupplementalLicensePayload()
 	{
 		while (true)
 		{
 			if (!CommonUtility.bool_0 && licenseDataFetchTicks > 0L)
 			{
-				if (LicenseRuntimeCoordinator.long_2 > 0L)
+				if (LicenseRuntimeCoordinator.supplementalLicenseExpirationTicks > 0L)
 				{
 					break;
 				}
@@ -303,8 +303,8 @@ internal class RemoteResourceFetchWorker
 				string text2 = CommonUtility.DecryptRijndaelBase64String(text, "JXKeoXe", Encoding.ASCII.GetBytes("JXKEOXEUKDKLA5H8"));
 				if (text2 != null && !(text2 == string.Empty))
 				{
-					LicenseRuntimeCoordinator.long_2 = LicenseRuntimeCoordinator.licenseState.licenseExpirationTicks;
-					LicenseRuntimeCoordinator.int_2 = 1;
+					LicenseRuntimeCoordinator.supplementalLicenseExpirationTicks = LicenseRuntimeCoordinator.licenseState.licenseExpirationTicks;
+					LicenseRuntimeCoordinator.licenseCoordinatorSignal = 1;
 					LicenseRuntimeCoordinator.string_6 = text2;
 				}
 			}
@@ -313,7 +313,7 @@ internal class RemoteResourceFetchWorker
 		fetchCompleted = true;
 	}
 
-	public void method_5()
+	public void FetchBaseLicensePayload()
 	{
 		while (true)
 		{
@@ -364,7 +364,7 @@ internal class RemoteResourceFetchWorker
 								LicenseRuntimeCoordinator.string_1 = array2[6];
 								LicenseRuntimeCoordinator.selectedGameProfileName = array2[7];
 								LicenseRuntimeCoordinator.int_0 = CommonUtility.ParseInt32OrZero(array2[8]);
-								LicenseRuntimeCoordinator.int_7 = CommonUtility.ParseInt32OrZero(array2[4]);
+								LicenseRuntimeCoordinator.licensedAccountLimit = CommonUtility.ParseInt32OrZero(array2[4]);
 								if (empty != null && empty != string.Empty)
 								{
 									string[] array3 = empty.Replace(" ", string.Empty).Replace("-", string.Empty).Split(',', ';');
@@ -385,7 +385,7 @@ internal class RemoteResourceFetchWorker
 								}
 								LicenseRuntimeCoordinator.licenseState.licenseValid = LicenseRuntimeCoordinator.licenseState.licenseIdentityHash != 0 && LicenseRuntimeCoordinator.licenseState.licenseExpirationTicks > LicenseRuntimeCoordinator.networkTimeTicks && LicenseRuntimeCoordinator.networkTimeTicks > 638082106219996160L;
 								LicenseRuntimeCoordinator.string_6 = string.Empty;
-								LicenseRuntimeCoordinator.int_2 = 1;
+								LicenseRuntimeCoordinator.licenseCoordinatorSignal = 1;
 								break;
 							}
 							LicenseRuntimeCoordinator.string_2 = "server";
@@ -405,7 +405,7 @@ internal class RemoteResourceFetchWorker
 							LicenseRuntimeCoordinator.string_1 = array2[6];
 							LicenseRuntimeCoordinator.selectedGameProfileName = array2[7];
 							LicenseRuntimeCoordinator.int_0 = CommonUtility.ParseInt32OrZero(array2[8]);
-							LicenseRuntimeCoordinator.int_7 = CommonUtility.ParseInt32OrZero(array2[4]);
+							LicenseRuntimeCoordinator.licensedAccountLimit = CommonUtility.ParseInt32OrZero(array2[4]);
 							if (empty2 != null && empty2 != string.Empty)
 							{
 								string[] array4 = empty2.Replace(" ", string.Empty).Replace("-", string.Empty).Split(',', ';');
@@ -426,7 +426,7 @@ internal class RemoteResourceFetchWorker
 							}
 							LicenseRuntimeCoordinator.licenseState.licenseValid = LicenseRuntimeCoordinator.licenseState.licenseIdentityHash != 0 && LicenseRuntimeCoordinator.licenseState.licenseExpirationTicks > LicenseRuntimeCoordinator.networkTimeTicks && LicenseRuntimeCoordinator.networkTimeTicks > 638082106219996160L;
 							LicenseRuntimeCoordinator.string_6 = string.Empty;
-							LicenseRuntimeCoordinator.int_2 = 1;
+							LicenseRuntimeCoordinator.licenseCoordinatorSignal = 1;
 							break;
 						}
 					}
@@ -447,7 +447,7 @@ internal class RemoteResourceFetchWorker
 		byte_0 = null;
 	}
 
-	public void method_6()
+	public void FetchVersionMetadata()
 	{
 		while (!CommonUtility.bool_0 && versionInfoFetchTicks > 0L && CommonUtility.GetElapsedMilliseconds(versionInfoFetchTicks) <= 1500L)
 		{

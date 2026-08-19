@@ -81,104 +81,104 @@ internal class RemoteResourceFetchWorker
 				}
 			}
 			authorizationCatalogFetchTicks = CommonUtility.GetCurrentTicks();
-			string text = FetchRemoteResourceTextAndClearCredentials();
-			if (text == null || text == string.Empty)
+			string fetchedCatalogText = FetchRemoteResourceTextAndClearCredentials();
+			if (fetchedCatalogText == null || fetchedCatalogText == string.Empty)
 			{
 				break;
 			}
-			string text2 = CommonUtility.DecryptRijndaelBase64String(text, "10", Encoding.ASCII.GetBytes(CommonUtility.DecodeCharArrayToString(CommonUtility.char_9)));
-			string[] array = text2.Split('\n', '\r');
-			LicenseRuntimeCoordinator.auxiliaryLicensePolicies = new LicenseRuntimeCoordinator.AuxiliaryLicensePolicy[array.Length];
-			int num = 0;
-			string[] array2 = array;
-			foreach (string text3 in array2)
+			string decryptedCatalogText = CommonUtility.DecryptRijndaelBase64String(fetchedCatalogText, "10", Encoding.ASCII.GetBytes(CommonUtility.DecodeCharArrayToString(CommonUtility.char_9)));
+			string[] catalogLines = decryptedCatalogText.Split('\n', '\r');
+			LicenseRuntimeCoordinator.auxiliaryLicensePolicies = new LicenseRuntimeCoordinator.AuxiliaryLicensePolicy[catalogLines.Length];
+			int parsedPolicyCount = 0;
+			string[] parsingLines = catalogLines;
+			foreach (string catalogLine in parsingLines)
 			{
-				if (text3 == null || text3 == string.Empty)
+				if (catalogLine == null || catalogLine == string.Empty)
 				{
 					continue;
 				}
-				if (text3[0] != 'N')
+				if (catalogLine[0] != 'N')
 				{
-					string[] array3 = text3.Split('|');
-					if (array3[0] == null || array3[0] == string.Empty)
+					string[] policyFields = catalogLine.Split('|');
+					if (policyFields[0] == null || policyFields[0] == string.Empty)
 					{
 						continue;
 					}
-					string text4 = array3[0].Replace(" ", string.Empty);
-					LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num].machineIdentityHash = CommonUtility.ComputeLegacyStringHash(text4);
-					LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num].authorizationExpirationTicks = 0L;
-					if (text4 != null && text4 != string.Empty)
+					string machineIdentityText = policyFields[0].Replace(" ", string.Empty);
+					LicenseRuntimeCoordinator.auxiliaryLicensePolicies[parsedPolicyCount].machineIdentityHash = CommonUtility.ComputeLegacyStringHash(machineIdentityText);
+					LicenseRuntimeCoordinator.auxiliaryLicensePolicies[parsedPolicyCount].authorizationExpirationTicks = 0L;
+					if (machineIdentityText != null && machineIdentityText != string.Empty)
 					{
-						_ = text4.Length;
-						text4 = string.Empty;
-						for (int j = 0; j < text4.Length; j++)
+						_ = machineIdentityText.Length;
+						machineIdentityText = string.Empty;
+						for (int j = 0; j < machineIdentityText.Length; j++)
 						{
-							text4 += "\0";
+							machineIdentityText += "\0";
 						}
 					}
-					if (array3.Length <= 1)
+					if (policyFields.Length <= 1)
 					{
-						num++;
+						parsedPolicyCount++;
 						continue;
 					}
-					string[] array4 = array3[1].Split('.', '/', '-');
-					if (array4.Length == 3)
+					string[] expirationDateParts = policyFields[1].Split('.', '/', '-');
+					if (expirationDateParts.Length == 3)
 					{
-						int num2 = CommonUtility.ParseInt32OrZero(array4[0]);
-						int num3 = CommonUtility.ParseInt32OrZero(array4[1]);
-						int num4 = CommonUtility.ParseInt32OrZero(array4[2]);
-						if (0 < num2 && num2 <= 31 && 0 < num3 && num3 <= 12 && num4 > 0)
+						int expirationDay = CommonUtility.ParseInt32OrZero(expirationDateParts[0]);
+						int expirationMonth = CommonUtility.ParseInt32OrZero(expirationDateParts[1]);
+						int expirationYear = CommonUtility.ParseInt32OrZero(expirationDateParts[2]);
+						if (0 < expirationDay && expirationDay <= 31 && 0 < expirationMonth && expirationMonth <= 12 && expirationYear > 0)
 						{
-							LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num].authorizationExpirationTicks = new DateTime(num4, num3, num2, 12, 30, 0, 0).Ticks;
+							LicenseRuntimeCoordinator.auxiliaryLicensePolicies[parsedPolicyCount].authorizationExpirationTicks = new DateTime(expirationYear, expirationMonth, expirationDay, 12, 30, 0, 0).Ticks;
 						}
 					}
-					if (array3.Length > 2)
+					if (policyFields.Length > 2)
 					{
-						string[] array5 = array3[2].Split(':');
-						if (array5.Length > 1)
+						string[] policyOptionFields = policyFields[2].Split(':');
+						if (policyOptionFields.Length > 1)
 						{
-							LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num].string_0 = array5[0];
-							LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num].int_0 = CommonUtility.ParseInt32OrZero(array5[1]);
-							if (array5.Length > 2)
+							LicenseRuntimeCoordinator.auxiliaryLicensePolicies[parsedPolicyCount].string_0 = policyOptionFields[0];
+							LicenseRuntimeCoordinator.auxiliaryLicensePolicies[parsedPolicyCount].int_0 = CommonUtility.ParseInt32OrZero(policyOptionFields[1]);
+							if (policyOptionFields.Length > 2)
 							{
-								LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num].int_2 = CommonUtility.ParseInt32OrZero(array5[2]);
+								LicenseRuntimeCoordinator.auxiliaryLicensePolicies[parsedPolicyCount].int_2 = CommonUtility.ParseInt32OrZero(policyOptionFields[2]);
 							}
-							if (array5.Length > 3)
+							if (policyOptionFields.Length > 3)
 							{
-								LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num].int_1 = CommonUtility.ParseInt32OrZero(array5[3]);
+								LicenseRuntimeCoordinator.auxiliaryLicensePolicies[parsedPolicyCount].int_1 = CommonUtility.ParseInt32OrZero(policyOptionFields[3]);
 							}
-							if (array5.Length > 4)
+							if (policyOptionFields.Length > 4)
 							{
-								LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num].int_3 = CommonUtility.ParseInt32OrZero(array5[4]);
+								LicenseRuntimeCoordinator.auxiliaryLicensePolicies[parsedPolicyCount].int_3 = CommonUtility.ParseInt32OrZero(policyOptionFields[4]);
 							}
-							if (array5.Length > 5)
+							if (policyOptionFields.Length > 5)
 							{
-								LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num].remoteGameScript = array5[5];
+								LicenseRuntimeCoordinator.auxiliaryLicensePolicies[parsedPolicyCount].remoteGameScript = policyOptionFields[5];
 							}
 						}
-						if (array3.Length > 3)
+						if (policyFields.Length > 3)
 						{
-							LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num].string_1 = array3[3];
+							LicenseRuntimeCoordinator.auxiliaryLicensePolicies[parsedPolicyCount].string_1 = policyFields[3];
 						}
-						num++;
+						parsedPolicyCount++;
 					}
 					else
 					{
-						num++;
+						parsedPolicyCount++;
 					}
 				}
 				else
 				{
-					LicenseRuntimeCoordinator.long_0 = CommonUtility.ParseInt64OrZero(text3.Substring(1));
+					LicenseRuntimeCoordinator.long_0 = CommonUtility.ParseInt64OrZero(catalogLine.Substring(1));
 				}
 			}
-			if (num == 0)
+			if (parsedPolicyCount == 0)
 			{
 				LicenseRuntimeCoordinator.auxiliaryLicensePolicies = null;
 			}
-			else if (LicenseRuntimeCoordinator.auxiliaryLicensePolicies.Length > num)
+			else if (LicenseRuntimeCoordinator.auxiliaryLicensePolicies.Length > parsedPolicyCount)
 			{
-				Array.Resize(ref LicenseRuntimeCoordinator.auxiliaryLicensePolicies, num);
+				Array.Resize(ref LicenseRuntimeCoordinator.auxiliaryLicensePolicies, parsedPolicyCount);
 			}
 			break;
 		}
@@ -187,8 +187,8 @@ internal class RemoteResourceFetchWorker
 
 	public void FetchAdvertisementCatalog()
 	{
-		Random random = new Random();
-		int num = random.Next(100, 400);
+		Random jitterRandom = new Random();
+		int requestJitterMilliseconds = jitterRandom.Next(100, 400);
 		while (true)
 		{
 			if (!CommonUtility.bool_0 && advertisementFetchTicks > 0L)
@@ -199,51 +199,51 @@ internal class RemoteResourceFetchWorker
 				}
 				if (CommonUtility.GetElapsedMilliseconds(advertisementFetchTicks) <= 150000L)
 				{
-					Thread.Sleep(150 + num);
+					Thread.Sleep(150 + requestJitterMilliseconds);
 					continue;
 				}
 			}
 			advertisementFetchTicks = CommonUtility.GetCurrentTicks();
-			string text = FetchRemoteResourceTextAndClearCredentials();
-			if (text == null || text == string.Empty)
+			string responseText = FetchRemoteResourceTextAndClearCredentials();
+			if (responseText == null || responseText == string.Empty)
 			{
 				break;
 			}
-			string[] array = null;
-			string[] array2 = text.Split('\n', '\r');
-			for (int i = 0; i < array2.Length; i++)
+			string[] advertisementEntries = null;
+			string[] responseLines = responseText.Split('\n', '\r');
+			for (int i = 0; i < responseLines.Length; i++)
 			{
-				if (array2[i] != null && array2[i] != string.Empty)
+				if (responseLines[i] != null && responseLines[i] != string.Empty)
 				{
-					string[] array3 = array2[i].Split('|');
-					int num2 = array3.Length;
-					if (num2 < 2 || array3[1] != "1")
+					string[] entryFields = responseLines[i].Split('|');
+					int entryFieldCount = entryFields.Length;
+					if (entryFieldCount < 2 || entryFields[1] != "1")
 					{
 					}
-					if (array != null)
+					if (advertisementEntries != null)
 					{
-						Array.Resize(ref array, array.Length + 1);
-						array[array.Length - 1] = array2[i];
+						Array.Resize(ref advertisementEntries, advertisementEntries.Length + 1);
+						advertisementEntries[advertisementEntries.Length - 1] = responseLines[i];
 					}
 					else
 					{
-						array = new string[1] { array2[i] };
+						advertisementEntries = new string[1] { responseLines[i] };
 					}
 				}
 			}
-			if (array == null)
+			if (advertisementEntries == null)
 			{
 				break;
 			}
-			AdvertisementAssetLoader.SourceEntries = new string[array.Length];
-			for (int j = 0; j < array.Length; j++)
+			AdvertisementAssetLoader.SourceEntries = new string[advertisementEntries.Length];
+			for (int j = 0; j < advertisementEntries.Length; j++)
 			{
-				string text2 = string.Empty;
+				string normalizedSourceEntry = string.Empty;
 				if (forceHttps)
 				{
-					text2 = array[j].Replace("http://", "https://");
+					normalizedSourceEntry = advertisementEntries[j].Replace("http://", "https://");
 				}
-				AdvertisementAssetLoader.SourceEntries[j] = text2;
+				AdvertisementAssetLoader.SourceEntries[j] = normalizedSourceEntry;
 			}
 			new Thread(AdvertisementAssetLoader.LoadWithRetries).Start();
 			break;
@@ -269,10 +269,10 @@ internal class RemoteResourceFetchWorker
 				}
 			}
 			hardwareLicenseFetchTicks = CommonUtility.GetCurrentTicks();
-			string text = FetchRemoteResourceTextAndClearCredentials();
-			if (text != null && !(text == string.Empty))
+			string payloadText = FetchRemoteResourceTextAndClearCredentials();
+			if (payloadText != null && !(payloadText == string.Empty))
 			{
-				LicenseRuntimeCoordinator.string_6 = text;
+				LicenseRuntimeCoordinator.string_6 = payloadText;
 				LicenseRuntimeCoordinator.licenseCoordinatorSignal = 1;
 			}
 			break;
@@ -297,15 +297,15 @@ internal class RemoteResourceFetchWorker
 				}
 			}
 			licenseDataFetchTicks = CommonUtility.GetCurrentTicks();
-			string text = FetchRemoteResourceTextAndClearCredentials();
-			if (text != null && !(text == string.Empty))
+			string encryptedPayloadText = FetchRemoteResourceTextAndClearCredentials();
+			if (encryptedPayloadText != null && !(encryptedPayloadText == string.Empty))
 			{
-				string text2 = CommonUtility.DecryptRijndaelBase64String(text, "JXKeoXe", Encoding.ASCII.GetBytes("JXKEOXEUKDKLA5H8"));
-				if (text2 != null && !(text2 == string.Empty))
+				string decryptedPayloadText = CommonUtility.DecryptRijndaelBase64String(encryptedPayloadText, "JXKeoXe", Encoding.ASCII.GetBytes("JXKEOXEUKDKLA5H8"));
+				if (decryptedPayloadText != null && !(decryptedPayloadText == string.Empty))
 				{
 					LicenseRuntimeCoordinator.supplementalLicenseExpirationTicks = LicenseRuntimeCoordinator.licenseState.licenseExpirationTicks;
 					LicenseRuntimeCoordinator.licenseCoordinatorSignal = 1;
-					LicenseRuntimeCoordinator.string_6 = text2;
+					LicenseRuntimeCoordinator.string_6 = decryptedPayloadText;
 				}
 			}
 			break;
@@ -334,54 +334,54 @@ internal class RemoteResourceFetchWorker
 				break;
 			}
 			licenseDataFetchTicks = CommonUtility.GetCurrentTicks();
-			string text = FetchRemoteResourceTextAndClearCredentials();
-			if (!LicenseRuntimeCoordinator.licenseState.licenseValid && !(text == string.Empty))
+			string payloadText = FetchRemoteResourceTextAndClearCredentials();
+			if (!LicenseRuntimeCoordinator.licenseState.licenseValid && !(payloadText == string.Empty))
 			{
-				string[] array = text.Split('$');
-				if (array.Length >= 2)
+				string[] payloadSections = payloadText.Split('$');
+				if (payloadSections.Length >= 2)
 				{
-					string text2 = CommonUtility.DecryptRijndaelBase64String(array[1], "JXKeoXe", Encoding.ASCII.GetBytes("JXKEOXEUKDKLA5H8"));
-					if (text2 != null && !(text2 == string.Empty))
+					string decryptedLicenseText = CommonUtility.DecryptRijndaelBase64String(payloadSections[1], "JXKeoXe", Encoding.ASCII.GetBytes("JXKEOXEUKDKLA5H8"));
+					if (decryptedLicenseText != null && !(decryptedLicenseText == string.Empty))
 					{
-						string[] array2 = text2.Split('|');
-						if (array2.Length >= 2)
+						string[] licenseFields = decryptedLicenseText.Split('|');
+						if (licenseFields.Length >= 2)
 						{
-							if (!array2[0].Contains(array2[1]))
+							if (!licenseFields[0].Contains(licenseFields[1]))
 							{
 								LicenseRuntimeCoordinator.string_2 = "bang";
 								LicenseRuntimeCoordinator.licenseState.encodedAuthorizedMachineList = string.Empty;
 								LicenseRuntimeCoordinator.licenseState.licenseFileSuffix = string.Empty;
 								LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes = null;
-								string empty = string.Empty;
-								empty = array2[2];
-								LicenseRuntimeCoordinator.licenseState.string_0 = array2[1];
-								LicenseRuntimeCoordinator.licenseState.string_1 = array2[0];
-								LicenseRuntimeCoordinator.licenseState.encodedAuthorizedMachineList = CommonUtility.EncodeBase64Utf8(empty);
-								LicenseRuntimeCoordinator.licenseState.licenseExpirationTicks = CommonUtility.ParseInt64OrZero(array2[3]);
-								LicenseRuntimeCoordinator.licenseState.licenseFileSuffix = array2[5];
-								LicenseRuntimeCoordinator.licenseState.licensedAccountLimit = CommonUtility.ParseInt32OrZero(array2[4]);
-								LicenseRuntimeCoordinator.licenseState.licenseIdentityHash = CommonUtility.ComputeLegacyStringHash(array2[0]);
-								LicenseRuntimeCoordinator.multiMachineFeatureFlagText = array2[6];
-								LicenseRuntimeCoordinator.selectedGameProfileName = array2[7];
-								LicenseRuntimeCoordinator.int_0 = CommonUtility.ParseInt32OrZero(array2[8]);
-								LicenseRuntimeCoordinator.licensedAccountLimit = CommonUtility.ParseInt32OrZero(array2[4]);
-								if (empty != null && empty != string.Empty)
+								string authorizedMachineListText = string.Empty;
+								authorizedMachineListText = licenseFields[2];
+								LicenseRuntimeCoordinator.licenseState.string_0 = licenseFields[1];
+								LicenseRuntimeCoordinator.licenseState.string_1 = licenseFields[0];
+								LicenseRuntimeCoordinator.licenseState.encodedAuthorizedMachineList = CommonUtility.EncodeBase64Utf8(authorizedMachineListText);
+								LicenseRuntimeCoordinator.licenseState.licenseExpirationTicks = CommonUtility.ParseInt64OrZero(licenseFields[3]);
+								LicenseRuntimeCoordinator.licenseState.licenseFileSuffix = licenseFields[5];
+								LicenseRuntimeCoordinator.licenseState.licensedAccountLimit = CommonUtility.ParseInt32OrZero(licenseFields[4]);
+								LicenseRuntimeCoordinator.licenseState.licenseIdentityHash = CommonUtility.ComputeLegacyStringHash(licenseFields[0]);
+								LicenseRuntimeCoordinator.multiMachineFeatureFlagText = licenseFields[6];
+								LicenseRuntimeCoordinator.selectedGameProfileName = licenseFields[7];
+								LicenseRuntimeCoordinator.int_0 = CommonUtility.ParseInt32OrZero(licenseFields[8]);
+								LicenseRuntimeCoordinator.licensedAccountLimit = CommonUtility.ParseInt32OrZero(licenseFields[4]);
+								if (authorizedMachineListText != null && authorizedMachineListText != string.Empty)
 								{
-									string[] array3 = empty.Replace(" ", string.Empty).Replace("-", string.Empty).Split(',', ';');
-									LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes = new uint[array3.Length];
-									LicenseRuntimeCoordinator.licenseState.IPList = new string[array3.Length];
-									for (int i = 0; i < array3.Length; i++)
+									string[] machineIdentityEntries = authorizedMachineListText.Replace(" ", string.Empty).Replace("-", string.Empty).Split(',', ';');
+									LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes = new uint[machineIdentityEntries.Length];
+									LicenseRuntimeCoordinator.licenseState.IPList = new string[machineIdentityEntries.Length];
+									for (int i = 0; i < machineIdentityEntries.Length; i++)
 									{
-										LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes[i] = CommonUtility.ComputeLegacyStringHash(array3[i]);
-										LicenseRuntimeCoordinator.licenseState.IPList[i] = array3[i];
+										LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes[i] = CommonUtility.ComputeLegacyStringHash(machineIdentityEntries[i]);
+										LicenseRuntimeCoordinator.licenseState.IPList[i] = machineIdentityEntries[i];
 									}
-									int length = empty.Length;
-									empty = string.Empty;
-									for (int j = 0; j < length; j++)
+									int sensitiveMachineListLength = authorizedMachineListText.Length;
+									authorizedMachineListText = string.Empty;
+									for (int j = 0; j < sensitiveMachineListLength; j++)
 									{
-										empty += "\0";
+										authorizedMachineListText += "\0";
 									}
-									array3 = null;
+									machineIdentityEntries = null;
 								}
 								LicenseRuntimeCoordinator.licenseState.licenseValid = LicenseRuntimeCoordinator.licenseState.licenseIdentityHash != 0 && LicenseRuntimeCoordinator.licenseState.licenseExpirationTicks > LicenseRuntimeCoordinator.networkTimeTicks && LicenseRuntimeCoordinator.networkTimeTicks > 638082106219996160L;
 								LicenseRuntimeCoordinator.string_6 = string.Empty;
@@ -392,37 +392,37 @@ internal class RemoteResourceFetchWorker
 							LicenseRuntimeCoordinator.licenseState.encodedAuthorizedMachineList = string.Empty;
 							LicenseRuntimeCoordinator.licenseState.licenseFileSuffix = string.Empty;
 							LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes = null;
-							LicenseRuntimeCoordinator.licenseState.string_0 = array2[1];
-							string empty2 = string.Empty;
-							empty2 = array2[2];
-							LicenseRuntimeCoordinator.licenseState.string_0 = array2[1];
-							LicenseRuntimeCoordinator.licenseState.string_1 = array2[0];
-							LicenseRuntimeCoordinator.licenseState.encodedAuthorizedMachineList = CommonUtility.EncodeBase64Utf8(empty2);
-							LicenseRuntimeCoordinator.licenseState.licenseExpirationTicks = CommonUtility.ParseInt64OrZero(array2[3]);
-							LicenseRuntimeCoordinator.licenseState.licenseFileSuffix = array2[5];
-							LicenseRuntimeCoordinator.licenseState.licensedAccountLimit = CommonUtility.ParseInt32OrZero(array2[4]);
-							LicenseRuntimeCoordinator.licenseState.licenseIdentityHash = CommonUtility.ComputeLegacyStringHash(array2[0]);
-							LicenseRuntimeCoordinator.multiMachineFeatureFlagText = array2[6];
-							LicenseRuntimeCoordinator.selectedGameProfileName = array2[7];
-							LicenseRuntimeCoordinator.int_0 = CommonUtility.ParseInt32OrZero(array2[8]);
-							LicenseRuntimeCoordinator.licensedAccountLimit = CommonUtility.ParseInt32OrZero(array2[4]);
-							if (empty2 != null && empty2 != string.Empty)
+							LicenseRuntimeCoordinator.licenseState.string_0 = licenseFields[1];
+							string authorizedMachineListText2 = string.Empty;
+							authorizedMachineListText2 = licenseFields[2];
+							LicenseRuntimeCoordinator.licenseState.string_0 = licenseFields[1];
+							LicenseRuntimeCoordinator.licenseState.string_1 = licenseFields[0];
+							LicenseRuntimeCoordinator.licenseState.encodedAuthorizedMachineList = CommonUtility.EncodeBase64Utf8(authorizedMachineListText2);
+							LicenseRuntimeCoordinator.licenseState.licenseExpirationTicks = CommonUtility.ParseInt64OrZero(licenseFields[3]);
+							LicenseRuntimeCoordinator.licenseState.licenseFileSuffix = licenseFields[5];
+							LicenseRuntimeCoordinator.licenseState.licensedAccountLimit = CommonUtility.ParseInt32OrZero(licenseFields[4]);
+							LicenseRuntimeCoordinator.licenseState.licenseIdentityHash = CommonUtility.ComputeLegacyStringHash(licenseFields[0]);
+							LicenseRuntimeCoordinator.multiMachineFeatureFlagText = licenseFields[6];
+							LicenseRuntimeCoordinator.selectedGameProfileName = licenseFields[7];
+							LicenseRuntimeCoordinator.int_0 = CommonUtility.ParseInt32OrZero(licenseFields[8]);
+							LicenseRuntimeCoordinator.licensedAccountLimit = CommonUtility.ParseInt32OrZero(licenseFields[4]);
+							if (authorizedMachineListText2 != null && authorizedMachineListText2 != string.Empty)
 							{
-								string[] array4 = empty2.Replace(" ", string.Empty).Replace("-", string.Empty).Split(',', ';');
-								LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes = new uint[array4.Length];
-								LicenseRuntimeCoordinator.licenseState.IPList = new string[array4.Length];
-								for (int k = 0; k < array4.Length; k++)
+								string[] machineIdentityEntries2 = authorizedMachineListText2.Replace(" ", string.Empty).Replace("-", string.Empty).Split(',', ';');
+								LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes = new uint[machineIdentityEntries2.Length];
+								LicenseRuntimeCoordinator.licenseState.IPList = new string[machineIdentityEntries2.Length];
+								for (int k = 0; k < machineIdentityEntries2.Length; k++)
 								{
-									LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes[k] = CommonUtility.ComputeLegacyStringHash(array4[k]);
-									LicenseRuntimeCoordinator.licenseState.IPList[k] = array4[k];
+									LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes[k] = CommonUtility.ComputeLegacyStringHash(machineIdentityEntries2[k]);
+									LicenseRuntimeCoordinator.licenseState.IPList[k] = machineIdentityEntries2[k];
 								}
-								int length2 = empty2.Length;
-								empty2 = string.Empty;
-								for (int l = 0; l < length2; l++)
+								int sensitiveMachineListLength2 = authorizedMachineListText2.Length;
+								authorizedMachineListText2 = string.Empty;
+								for (int l = 0; l < sensitiveMachineListLength2; l++)
 								{
-									empty2 += "\0";
+									authorizedMachineListText2 += "\0";
 								}
-								array4 = null;
+								machineIdentityEntries2 = null;
 							}
 							LicenseRuntimeCoordinator.licenseState.licenseValid = LicenseRuntimeCoordinator.licenseState.licenseIdentityHash != 0 && LicenseRuntimeCoordinator.licenseState.licenseExpirationTicks > LicenseRuntimeCoordinator.networkTimeTicks && LicenseRuntimeCoordinator.networkTimeTicks > 638082106219996160L;
 							LicenseRuntimeCoordinator.string_6 = string.Empty;
@@ -432,13 +432,13 @@ internal class RemoteResourceFetchWorker
 					}
 				}
 			}
-			if (text != string.Empty && text != null)
+			if (payloadText != string.Empty && payloadText != null)
 			{
-				int length3 = text.Length;
-				text = string.Empty;
-				for (int m = 0; m < length3; m++)
+				int payloadTextLength = payloadText.Length;
+				payloadText = string.Empty;
+				for (int m = 0; m < payloadTextLength; m++)
 				{
-					text += "\0";
+					payloadText += "\0";
 				}
 			}
 			break;
@@ -454,52 +454,52 @@ internal class RemoteResourceFetchWorker
 			Thread.Sleep(150);
 		}
 		versionInfoFetchTicks = CommonUtility.GetCurrentTicks();
-		string text = FetchRemoteResourceTextAndClearCredentials();
-		string[] array;
-		if (text != null && !(text == string.Empty))
+		string responseText = FetchRemoteResourceTextAndClearCredentials();
+		string[] versionFields;
+		if (responseText != null && !(responseText == string.Empty))
 		{
-			array = text.Split('|');
-			string text2 = array[0].Replace(".", "");
-			if (CommonUtility.ParseInt32OrZero(text2) > 0)
+			versionFields = responseText.Split('|');
+			string fetchedVersionDigits = versionFields[0].Replace(".", "");
+			if (CommonUtility.ParseInt32OrZero(fetchedVersionDigits) > 0)
 			{
 				if (LicenseRuntimeCoordinator.latestVersionText == null || !(LicenseRuntimeCoordinator.latestVersionText != string.Empty))
 				{
 					goto IL_016a;
 				}
-				string text3 = LicenseRuntimeCoordinator.latestVersionText.Replace(".", "");
-				while (text3.Length != text2.Length)
+				string currentVersionDigits = LicenseRuntimeCoordinator.latestVersionText.Replace(".", "");
+				while (currentVersionDigits.Length != fetchedVersionDigits.Length)
 				{
-					if (text3.Length < text2.Length)
+					if (currentVersionDigits.Length < fetchedVersionDigits.Length)
 					{
-						text3 += "0";
+						currentVersionDigits += "0";
 					}
 					else
 					{
-						text2 += "0";
+						fetchedVersionDigits += "0";
 					}
 				}
-				int num = CommonUtility.ParseInt32OrZero(text3);
-				int num2 = CommonUtility.ParseInt32OrZero(text2);
-				if (num2 >= num)
+				int currentVersionNumber = CommonUtility.ParseInt32OrZero(currentVersionDigits);
+				int fetchedVersionNumber = CommonUtility.ParseInt32OrZero(fetchedVersionDigits);
+				if (fetchedVersionNumber >= currentVersionNumber)
 				{
-					if (num2 != num)
+					if (fetchedVersionNumber != currentVersionNumber)
 					{
 						goto IL_016a;
 					}
-					if (array.Length > 1 && array[1] != string.Empty && array[1] != null)
+					if (versionFields.Length > 1 && versionFields[1] != string.Empty && versionFields[1] != null)
 					{
-						LicenseRuntimeCoordinator.importantNoticeText = array[1];
+						LicenseRuntimeCoordinator.importantNoticeText = versionFields[1];
 					}
 				}
 			}
 		}
 		goto IL_019f;
 		IL_016a:
-		LicenseRuntimeCoordinator.latestVersionText = array[0];
-		LicenseRuntimeCoordinator.string_3 = array[0];
-		if (array.Length > 1 && array[1] != string.Empty && array[1] != null)
+		LicenseRuntimeCoordinator.latestVersionText = versionFields[0];
+		LicenseRuntimeCoordinator.string_3 = versionFields[0];
+		if (versionFields.Length > 1 && versionFields[1] != string.Empty && versionFields[1] != null)
 		{
-			LicenseRuntimeCoordinator.importantNoticeText = array[1];
+			LicenseRuntimeCoordinator.importantNoticeText = versionFields[1];
 		}
 		goto IL_019f;
 		IL_019f:
@@ -518,48 +518,48 @@ internal class RemoteResourceFetchWorker
 
 	private string FetchRemoteResourceTextAndClearCredentials()
 	{
-		string result = string.Empty;
+		string responseText = string.Empty;
 		if (baseUrl != null && !(baseUrl == string.Empty))
 		{
 			try
 			{
-				string text = resourcePathSource.ToString();
-				string text2 = resourcePathSource.GetType().ToString().ToUpper();
-				if (text2.IndexOf(CommonUtility.DecodeLengthShiftedString(CommonUtility.string_12)) > 0)
+				string resourcePath = resourcePathSource.ToString();
+				string resourcePathSourceTypeName = resourcePathSource.GetType().ToString().ToUpper();
+				if (resourcePathSourceTypeName.IndexOf(CommonUtility.DecodeLengthShiftedString(CommonUtility.string_12)) > 0)
 				{
-					text = string.Concat((char[])resourcePathSource);
+					resourcePath = string.Concat((char[])resourcePathSource);
 				}
-				if (text[0] > 'ÿ')
+				if (resourcePath[0] > 'ÿ')
 				{
-					text = CommonUtility.DecodeLengthShiftedString(text);
+					resourcePath = CommonUtility.DecodeLengthShiftedString(resourcePath);
 				}
-				if ((byte)text[0] != 47)
+				if ((byte)resourcePath[0] != 47)
 				{
-					text = "/" + text;
+					resourcePath = "/" + resourcePath;
 				}
 				if ((ProbeWindowsProductNameAndReturnLegacyLabel() != string.Empty && ProbeWindowsProductNameAndReturnLegacyLabel().Contains("Windows 10")) || (ProbeWindowsProductNameAndReturnLegacyLabel() != string.Empty && ProbeWindowsProductNameAndReturnLegacyLabel().Contains("Windows 11")))
 				{
 					forceHttps = true;
 					baseUrl = baseUrl.Replace("http://", "https://");
 				}
-				Uri uri = new Uri(baseUrl + text);
-				if (uri.Host != null && !(uri.Host == string.Empty))
+				Uri resourceUri = new Uri(baseUrl + resourcePath);
+				if (resourceUri.Host != null && !(resourceUri.Host == string.Empty))
 				{
-					string text3 = uri.Host.ToLower();
-					if (text3 != null && !(text3 == string.Empty))
+					string hostName = resourceUri.Host.ToLower();
+					if (hostName != null && !(hostName == string.Empty))
 					{
-						WebClient webClient = new WebClient();
+						WebClient client = new WebClient();
 						if ((ProbeWindowsProductNameAndReturnLegacyLabel() != string.Empty && ProbeWindowsProductNameAndReturnLegacyLabel().Contains("Windows 10")) || (ProbeWindowsProductNameAndReturnLegacyLabel() != string.Empty && ProbeWindowsProductNameAndReturnLegacyLabel().Contains("Windows 11")))
 						{
 							forceHttps = true;
 							ServicePointManager.ServerCertificateValidationCallback = (object _003Cp0_003E, X509Certificate _003Cp1_003E, X509Chain _003Cp2_003E, SslPolicyErrors _003Cp3_003E) => true;
                             ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072 | (SecurityProtocolType)768 | SecurityProtocolType.Tls | SecurityProtocolType.Ssl3;
-                            webClient.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134");
+                            client.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134");
 						}
-						byte[] array = null;
+						byte[] responseBytes = null;
 						if (baseUrl[0] != 'f' && baseUrl[0] != 'F')
 						{
-							array = webClient.DownloadData(uri);
+							responseBytes = client.DownloadData(resourceUri);
 						}
 						else
 						{
@@ -567,15 +567,15 @@ internal class RemoteResourceFetchWorker
 							{
 								credentialUserName = CommonUtility.DecodeLengthShiftedString(credentialUserName);
 							}
-							webClient.Credentials = new NetworkCredential(credentialUserName, credentialPassword);
-							array = webClient.DownloadData(uri);
+							client.Credentials = new NetworkCredential(credentialUserName, credentialPassword);
+							responseBytes = client.DownloadData(resourceUri);
 						}
-						if (array != null)
+						if (responseBytes != null)
 						{
-							result = Encoding.UTF8.GetString(array, 0, array.Length);
+							responseText = Encoding.UTF8.GetString(responseBytes, 0, responseBytes.Length);
 						}
-						webClient.CancelAsync();
-						webClient.Dispose();
+						client.CancelAsync();
+						client.Dispose();
 					}
 				}
 			}
@@ -585,24 +585,24 @@ internal class RemoteResourceFetchWorker
 		}
 		if (credentialUserName != string.Empty && credentialUserName != null)
 		{
-			int length = credentialUserName.Length;
+			int credentialUserNameLength = credentialUserName.Length;
 			credentialUserName = string.Empty;
-			for (int num = 0; num < length; num++)
+			for (int wipeIndex = 0; wipeIndex < credentialUserNameLength; wipeIndex++)
 			{
 				credentialUserName += "\0";
 			}
 		}
 		credentialPassword = null;
 		credentialUserName = null;
-		return result;
+		return responseText;
 	}
 
 	private static string ProbeWindowsProductNameAndReturnLegacyLabel()
 	{
 		try
 		{
-			RegistryKey registryKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion");
-			_ = (string)registryKey.GetValue("ProductName");
+			RegistryKey currentVersionKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion");
+			_ = (string)currentVersionKey.GetValue("ProductName");
 			return "Windows 7";
 		}
 		catch

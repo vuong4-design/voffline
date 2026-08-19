@@ -114,20 +114,20 @@ public class AuxiliaryMachineManager : Form
 
 	public static string BuildCombatTargetSyncPayload()
 	{
-		string text = string.Empty;
-		string text2 = string.Empty;
-		string text3 = string.Empty;
+		string targetGroup1Text = string.Empty;
+		string targetGroup2Text = string.Empty;
+		string targetGroup3Text = string.Empty;
 		if (CombatTargetSelectionHelper.string_4 != null)
 		{
 			for (int i = 0; i < CombatTargetSelectionHelper.string_4.Length; i++)
 			{
 				if (CombatTargetSelectionHelper.string_4[i] != null && !(CombatTargetSelectionHelper.string_4[i] == string.Empty))
 				{
-					if (text != string.Empty)
+					if (targetGroup1Text != string.Empty)
 					{
-						text += ";";
+						targetGroup1Text += ";";
 					}
-					text += CombatTargetSelectionHelper.string_4[i];
+					targetGroup1Text += CombatTargetSelectionHelper.string_4[i];
 				}
 			}
 		}
@@ -137,11 +137,11 @@ public class AuxiliaryMachineManager : Form
 			{
 				if (CombatTargetSelectionHelper.string_3[j] != null && !(CombatTargetSelectionHelper.string_3[j] == string.Empty))
 				{
-					if (text2 != string.Empty)
+					if (targetGroup2Text != string.Empty)
 					{
-						text2 += ";";
+						targetGroup2Text += ";";
 					}
-					text2 += CombatTargetSelectionHelper.string_3[j];
+					targetGroup2Text += CombatTargetSelectionHelper.string_3[j];
 				}
 			}
 		}
@@ -151,51 +151,51 @@ public class AuxiliaryMachineManager : Form
 			{
 				if (CombatTargetSelectionHelper.string_5[k] != null && !(CombatTargetSelectionHelper.string_5[k] == string.Empty))
 				{
-					if (text3 != string.Empty)
+					if (targetGroup3Text != string.Empty)
 					{
-						text3 += ";";
+						targetGroup3Text += ";";
 					}
-					text3 += CombatTargetSelectionHelper.string_5[k];
+					targetGroup3Text += CombatTargetSelectionHelper.string_5[k];
 				}
 			}
 		}
-		string string_ = CombatTargetSelectionHelper.alwaysAttackGuildTargetsEnabled + "|" + CombatTargetSelectionHelper.int_2 + "|" + CombatTargetSelectionHelper.int_3 + "|" + text + "|" + text2 + "|" + text3;
-		return CommonUtility.EncodeUnicodeStringAsHex(string_);
+		string payloadText = CombatTargetSelectionHelper.alwaysAttackGuildTargetsEnabled + "|" + CombatTargetSelectionHelper.int_2 + "|" + CombatTargetSelectionHelper.int_3 + "|" + targetGroup1Text + "|" + targetGroup2Text + "|" + targetGroup3Text;
+		return CommonUtility.EncodeUnicodeStringAsHex(payloadText);
 	}
 
 	public static void ApplyCombatTargetSyncPayload(string payloadHex)
 	{
-		string text = CommonUtility.DecodeUnicodeHexString(payloadHex);
-		string[] array = text.Split('|');
-		if (array.Length < 3)
+		string decodedPayloadText = CommonUtility.DecodeUnicodeHexString(payloadHex);
+		string[] payloadFields = decodedPayloadText.Split('|');
+		if (payloadFields.Length < 3)
 		{
 			return;
 		}
-		CombatTargetSelectionHelper.alwaysAttackGuildTargetsEnabled = CommonUtility.ParseInt32OrZero(array[0]);
-		CombatTargetSelectionHelper.int_2 = CommonUtility.ParseInt32OrZero(array[1]);
-		CombatTargetSelectionHelper.int_3 = CommonUtility.ParseInt32OrZero(array[2]);
-		if (array.Length > 3)
+		CombatTargetSelectionHelper.alwaysAttackGuildTargetsEnabled = CommonUtility.ParseInt32OrZero(payloadFields[0]);
+		CombatTargetSelectionHelper.int_2 = CommonUtility.ParseInt32OrZero(payloadFields[1]);
+		CombatTargetSelectionHelper.int_3 = CommonUtility.ParseInt32OrZero(payloadFields[2]);
+		if (payloadFields.Length > 3)
 		{
 			CombatTargetSelectionHelper.string_4 = null;
-			if (array[3] != null && array[3] != string.Empty)
+			if (payloadFields[3] != null && payloadFields[3] != string.Empty)
 			{
-				CombatTargetSelectionHelper.string_4 = array[3].Split(';');
+				CombatTargetSelectionHelper.string_4 = payloadFields[3].Split(';');
 			}
 		}
-		if (array.Length > 4)
+		if (payloadFields.Length > 4)
 		{
 			CombatTargetSelectionHelper.string_3 = null;
-			if (array[4] != null && array[4] != string.Empty)
+			if (payloadFields[4] != null && payloadFields[4] != string.Empty)
 			{
-				CombatTargetSelectionHelper.string_3 = array[4].Split(';');
+				CombatTargetSelectionHelper.string_3 = payloadFields[4].Split(';');
 			}
 		}
-		if (array.Length > 5)
+		if (payloadFields.Length > 5)
 		{
 			CombatTargetSelectionHelper.string_5 = null;
-			if (array[5] != null && array[5] != string.Empty)
+			if (payloadFields[5] != null && payloadFields[5] != string.Empty)
 			{
-				CombatTargetSelectionHelper.string_5 = array[5].Split(';');
+				CombatTargetSelectionHelper.string_5 = payloadFields[5].Split(';');
 			}
 		}
 		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_4);
@@ -208,7 +208,7 @@ public class AuxiliaryMachineManager : Form
 		{
 			if (transformKey > 0)
 			{
-				string text;
+				string transformedText;
 				if (!decode)
 				{
 					if (transformKey > 9)
@@ -216,59 +216,59 @@ public class AuxiliaryMachineManager : Form
 						syncText = CommonUtility.CompressUtf8DeflateToBase64(syncText);
 						if (syncText != null && syncText != string.Empty)
 						{
-							text = string.Empty;
+							transformedText = string.Empty;
 							for (int i = 0; i < syncText.Length; i++)
 							{
-								char c = syncText[i];
-								if (c >= '\u0080')
+								char transformedChar = syncText[i];
+								if (transformedChar >= '\u0080')
 								{
-									if (c > '\u0080')
+									if (transformedChar > '\u0080')
 									{
-										c = (char)(c - 128);
+										transformedChar = (char)(transformedChar - 128);
 									}
 								}
 								else
 								{
-									c = (char)(c + 128);
+									transformedChar = (char)(transformedChar + 128);
 								}
-								text += c;
+								transformedText += transformedChar;
 							}
-							syncText = text;
+							syncText = transformedText;
 						}
 						return syncText;
 					}
-					text = string.Empty;
+					transformedText = string.Empty;
 					for (int j = 0; j < syncText.Length; j++)
 					{
-						text += (char)(syncText[j] + transformKey + j % 10);
+						transformedText += (char)(syncText[j] + transformKey + j % 10);
 					}
-					return text;
+					return transformedText;
 				}
 				if (transformKey > 9)
 				{
-					string text2 = string.Empty;
+					string restoredText = string.Empty;
 					for (int k = 0; k < syncText.Length; k++)
 					{
-						char c2 = syncText[k];
-						if (c2 < '\u0080')
+						char restoredChar = syncText[k];
+						if (restoredChar < '\u0080')
 						{
-							c2 = (char)(c2 + 128);
+							restoredChar = (char)(restoredChar + 128);
 						}
-						else if (c2 > '\u0080')
+						else if (restoredChar > '\u0080')
 						{
-							c2 = (char)(c2 - 128);
+							restoredChar = (char)(restoredChar - 128);
 						}
-						text2 += c2;
+						restoredText += restoredChar;
 					}
-					syncText = CommonUtility.DecompressBase64DeflateUtf8(text2);
+					syncText = CommonUtility.DecompressBase64DeflateUtf8(restoredText);
 					return syncText;
 				}
-				text = string.Empty;
+				transformedText = string.Empty;
 				for (int l = 0; l < syncText.Length; l++)
 				{
-					text += (char)(syncText[l] - transformKey - l % 10);
+					transformedText += (char)(syncText[l] - transformKey - l % 10);
 				}
-				return text;
+				return transformedText;
 			}
 			return syncText;
 		}
@@ -277,13 +277,13 @@ public class AuxiliaryMachineManager : Form
 
 	public static void RunAuxiliarySyncSenderWithRetry()
 	{
-		int int_ = pendingSyncCharacterId;
+		int characterIdToSync = pendingSyncCharacterId;
 		pendingSyncCharacterId = 0;
 		while (true)
 		{
 			try
 			{
-				RunAuxiliarySyncSenderForCharacterId(int_);
+				RunAuxiliarySyncSenderForCharacterId(characterIdToSync);
 				break;
 			}
 			catch
@@ -295,155 +295,155 @@ public class AuxiliaryMachineManager : Form
 
 	public static void RunAuxiliarySyncSenderForCharacterId(int characterId)
 	{
-		int int_8 = 0;
-		int num = 0;
-		int num2 = 0;
-		int num3 = 0;
-		int num4 = -1000;
-		long num5 = 0L;
-		byte[] array = new byte[4];
-		string text = null;
-		string empty = string.Empty;
-		CharacterAccountConfig characterAccountConfig_ = default(CharacterAccountConfig);
+		int bytesTransferred = 0;
+		int accountRefreshCountdown = 0;
+		int recipientIndex = 0;
+		int accountIndex = 0;
+		int accountStateCode = -1000;
+		long lastRoomChannelSendTicks = 0L;
+		byte[] readBuffer = new byte[4];
+		string combatTargetBroadcastMessage = null;
+		string outgoingSyncText = string.Empty;
+		CharacterAccountConfig accountConfig = default(CharacterAccountConfig);
 		while (true)
 		{
-			num--;
+			accountRefreshCountdown--;
 			Thread.Sleep(100);
 			if (CommonUtility.bool_0)
 			{
 				break;
 			}
-			if (num <= 0)
+			if (accountRefreshCountdown <= 0)
 			{
-				num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterId);
-				if (num3 < 0)
+				accountIndex = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterId);
+				if (accountIndex < 0)
 				{
 					break;
 				}
-				num = 30;
-				GameInterfaceMemoryHelper.smethod_41(characterAccountConfig_, Form1.lockPrivateChatEnabled > 0);
+				accountRefreshCountdown = 30;
+				GameInterfaceMemoryHelper.smethod_41(accountConfig, Form1.lockPrivateChatEnabled > 0);
 			}
-			characterAccountConfig_ = Form1.characterAccountConfig_1[num3];
-			if (num4 == -1000)
+			accountConfig = Form1.characterAccountConfig_1[accountIndex];
+			if (accountStateCode == -1000)
 			{
-				num4 = LicenseRuntimeCoordinator.GetAccountStateCodeSafe(characterAccountConfig_);
+				accountStateCode = LicenseRuntimeCoordinator.GetAccountStateCodeSafe(accountConfig);
 			}
-			if (characterAccountConfig_.int_2 > 0 && num4 > 0)
+			if (accountConfig.int_2 > 0 && accountStateCode > 0)
 			{
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array, 4, ref int_8);
-				uint num6 = BitConverter.ToUInt32(array, 0);
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, array, 4, ref int_8);
-				uint num7 = BitConverter.ToUInt32(array, 0);
-				uint num8 = num7 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, array, 4, ref int_8);
-				uint num9 = BitConverter.ToUInt32(array, 0);
-				uint num10 = num9 + num8;
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_55.resolvedValue, array, 4, ref int_8);
-				int num11 = BitConverter.ToInt32(array, 0);
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_50.resolvedValue, array, 4, ref int_8);
-				int num12 = BitConverter.ToInt32(array, 0);
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, array, 4, ref int_8);
-				int num13 = BitConverter.ToInt32(array, 0);
-				int num14 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_);
-				if (num12 == 0 || num11 == 0 || num13 == 0 || num14 <= 1)
+				WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, readBuffer, 4, ref bytesTransferred);
+				uint syncRootPointer = BitConverter.ToUInt32(readBuffer, 0);
+				WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, syncRootPointer + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, readBuffer, 4, ref bytesTransferred);
+				uint syncEntryIndex = BitConverter.ToUInt32(readBuffer, 0);
+				uint syncEntryOffset = syncEntryIndex * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+				WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, readBuffer, 4, ref bytesTransferred);
+				uint syncTableBaseAddress = BitConverter.ToUInt32(readBuffer, 0);
+				uint syncEntryAddress = syncTableBaseAddress + syncEntryOffset;
+				WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, syncEntryAddress + GameConfigurationManager.memorySignatureScanConfig_55.resolvedValue, readBuffer, 4, ref bytesTransferred);
+				int syncGuardValue1 = BitConverter.ToInt32(readBuffer, 0);
+				WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, syncEntryAddress + GameConfigurationManager.memorySignatureScanConfig_50.resolvedValue, readBuffer, 4, ref bytesTransferred);
+				int syncGuardValue2 = BitConverter.ToInt32(readBuffer, 0);
+				WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, readBuffer, 4, ref bytesTransferred);
+				int syncGuardValue3 = BitConverter.ToInt32(readBuffer, 0);
+				int gatewayConnectionState = GameInterfaceMemoryHelper.ReadGatewayConnectionState(accountConfig);
+				if (syncGuardValue2 == 0 || syncGuardValue1 == 0 || syncGuardValue3 == 0 || gatewayConnectionState <= 1)
 				{
 					continue;
 				}
-				int num15 = 0;
+				int multiMachinePasswordValue = 0;
 				if (Form1.multiMachinePasswordEnabled > 0)
 				{
-					num15 = Form1.multiMachinePassword;
+					multiMachinePasswordValue = Form1.multiMachinePassword;
 				}
 				if (combatTargetSyncBroadcastPending)
 				{
-					if (combatTargetSyncBroadcastStartTicks == 0L || text == null)
+					if (combatTargetSyncBroadcastStartTicks == 0L || combatTargetBroadcastMessage == null)
 					{
 						combatTargetSyncBroadcastStartTicks = CommonUtility.GetCurrentTicks();
-						text = "UP:" + num15 + ":" + BuildCombatTargetSyncPayload();
+						combatTargetBroadcastMessage = "UP:" + multiMachinePasswordValue + ":" + BuildCombatTargetSyncPayload();
 					}
 					if (CommonUtility.GetElapsedMilliseconds(combatTargetSyncBroadcastStartTicks) < combatTargetSyncBroadcastDurationMilliseconds)
 					{
-						empty = text;
+						outgoingSyncText = combatTargetBroadcastMessage;
 						goto IL_072c;
 					}
 					combatTargetSyncBroadcastPending = false;
 					combatTargetSyncBroadcastStartTicks = 0L;
-					text = null;
+					combatTargetBroadcastMessage = null;
 				}
-				uint num16 = 0u;
-				uint num17 = 0u;
-				int num18 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId;
+				uint mainCoordinateX = 0u;
+				uint mainCoordinateY = 0u;
+				int mainMapId = CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId;
 				if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates != null)
 				{
-					num16 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates[0];
-					num17 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates[1];
+					mainCoordinateX = CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates[0];
+					mainCoordinateY = CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates[1];
 				}
-				if (num16 == 0 || num17 == 0 || num18 <= 0)
+				if (mainCoordinateX == 0 || mainCoordinateY == 0 || mainMapId <= 0)
 				{
 					continue;
 				}
-				string text2 = "0";
+				string battlefieldSyncValueText = "0";
 				if (TongKimBattlefieldHelper.int_0 > 0)
 				{
 					if (CommonUtility.GetElapsedMilliseconds(TongKimBattlefieldHelper.long_0) < 1500L)
 					{
-						text2 = TongKimBattlefieldHelper.int_0.ToString();
+						battlefieldSyncValueText = TongKimBattlefieldHelper.int_0.ToString();
 					}
 					else
 					{
 						TongKimBattlefieldHelper.int_0 = 0;
 					}
 				}
-				empty = syncFieldDelimiter + num18 + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.fightState + syncFieldDelimiter + num16 + syncFieldDelimiter + num17 + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.entityExistsFlag + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.currentTargetEntityId + syncFieldDelimiter + Form1.chienLongDongCombatEnabled + syncFieldDelimiter + Form1.pkModeIndex + syncFieldDelimiter + Form1.primaryBattlefieldIndex + syncFieldDelimiter + Form1.secondaryBattlefieldIndex + syncFieldDelimiter + ChienLongDongNavigationHelper.int_0 + syncFieldDelimiter + Form1.findMainAccountInCityEnabled + syncFieldDelimiter + Form1.attackPlayersEnabled + syncFieldDelimiter + Form1.attackMonstersEnabled + syncFieldDelimiter + Form1.prioritizeBossTargetsEnabled + syncFieldDelimiter + Form1.defenderFactionEnabled + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.killerStatus + syncFieldDelimiter + Form1.congThanhChienModeIndex + syncFieldDelimiter + Form1.mainAccountLeavesRearCampEnabled + syncFieldDelimiter + Form1.auxiliaryAccountsWaitForMainAccountEnabled + syncFieldDelimiter + FormDame.combinedDamageEnabled + syncFieldDelimiter + FormDame.attackInputModeIndex + syncFieldDelimiter + FormDame.autoSwitchToNormalAttackEnabled + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.packedMousePosition + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.lastVirtualKeyCode + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.currentTargetEntityId + syncFieldDelimiter + Form1.shareTargetEnabled + syncFieldDelimiter + Form1.autoFindTargetEnabled + syncFieldDelimiter + Form1.findMainAccountEnabled + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.pendingSyncCommandCode + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.entityId + syncFieldDelimiter + Form1.scoutModeEnabled + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.spaceKeyPressedFlag + syncFieldDelimiter + num15 + syncFieldDelimiter + Form1.int_48[0] + syncFieldDelimiter + Form1.int_48[1] + syncFieldDelimiter + Form1.selectedGameProfileIndex + syncFieldDelimiter + MapNavigationProfileProvider.int_1 + syncFieldDelimiter + Form1.congThanhChienTownPortalEnabled + syncFieldDelimiter + Form1.congThanhChienTownPortalMenuIndices.Replace(" ", "").Replace(",", "_") + syncFieldDelimiter + Form1.syncPkModeWithMainAccountEnabled + syncFieldDelimiter + Form1.allAccountsGoToCoordinateEnabled + syncFieldDelimiter + Form1.gatheringPointEnabled + syncFieldDelimiter + text2;
+				outgoingSyncText = syncFieldDelimiter + mainMapId + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.fightState + syncFieldDelimiter + mainCoordinateX + syncFieldDelimiter + mainCoordinateY + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.entityExistsFlag + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.currentTargetEntityId + syncFieldDelimiter + Form1.chienLongDongCombatEnabled + syncFieldDelimiter + Form1.pkModeIndex + syncFieldDelimiter + Form1.primaryBattlefieldIndex + syncFieldDelimiter + Form1.secondaryBattlefieldIndex + syncFieldDelimiter + ChienLongDongNavigationHelper.int_0 + syncFieldDelimiter + Form1.findMainAccountInCityEnabled + syncFieldDelimiter + Form1.attackPlayersEnabled + syncFieldDelimiter + Form1.attackMonstersEnabled + syncFieldDelimiter + Form1.prioritizeBossTargetsEnabled + syncFieldDelimiter + Form1.defenderFactionEnabled + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.killerStatus + syncFieldDelimiter + Form1.congThanhChienModeIndex + syncFieldDelimiter + Form1.mainAccountLeavesRearCampEnabled + syncFieldDelimiter + Form1.auxiliaryAccountsWaitForMainAccountEnabled + syncFieldDelimiter + FormDame.combinedDamageEnabled + syncFieldDelimiter + FormDame.attackInputModeIndex + syncFieldDelimiter + FormDame.autoSwitchToNormalAttackEnabled + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.packedMousePosition + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.lastVirtualKeyCode + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.currentTargetEntityId + syncFieldDelimiter + Form1.shareTargetEnabled + syncFieldDelimiter + Form1.autoFindTargetEnabled + syncFieldDelimiter + Form1.findMainAccountEnabled + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.pendingSyncCommandCode + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.entityId + syncFieldDelimiter + Form1.scoutModeEnabled + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.spaceKeyPressedFlag + syncFieldDelimiter + multiMachinePasswordValue + syncFieldDelimiter + Form1.int_48[0] + syncFieldDelimiter + Form1.int_48[1] + syncFieldDelimiter + Form1.selectedGameProfileIndex + syncFieldDelimiter + MapNavigationProfileProvider.int_1 + syncFieldDelimiter + Form1.congThanhChienTownPortalEnabled + syncFieldDelimiter + Form1.congThanhChienTownPortalMenuIndices.Replace(" ", "").Replace(",", "_") + syncFieldDelimiter + Form1.syncPkModeWithMainAccountEnabled + syncFieldDelimiter + Form1.allAccountsGoToCoordinateEnabled + syncFieldDelimiter + Form1.gatheringPointEnabled + syncFieldDelimiter + battlefieldSyncValueText;
 				goto IL_072c;
 			}
-			Form1.characterAccountConfig_1[num3].int_2 = 0;
+			Form1.characterAccountConfig_1[accountIndex].int_2 = 0;
 			break;
 			IL_072c:
-			string text3 = TransformAuxiliarySyncText(empty, Form1.coordinateEncryptionValue);
+			string encodedSyncText = TransformAuxiliarySyncText(outgoingSyncText, Form1.coordinateEncryptionValue);
 			CharacterStateSyncCoordinator.characterSyncSnapshot_0.pendingSyncCommandCode = 0;
 			if (auxiliaryAccountNames != null)
 			{
-				int num19 = auxiliaryAccountNames.Length;
-				if (num2 < 0 || num19 <= num2)
+				int auxiliaryAccountCount = auxiliaryAccountNames.Length;
+				if (recipientIndex < 0 || auxiliaryAccountCount <= recipientIndex)
 				{
-					num2 = 0;
+					recipientIndex = 0;
 				}
-				int num20 = num2;
-				string text4 = null;
-				while (text4 == null || text4 == string.Empty || text4 == characterAccountConfig_.string_22)
+				int recipientSearchStartIndex = recipientIndex;
+				string recipientAccountName = null;
+				while (recipientAccountName == null || recipientAccountName == string.Empty || recipientAccountName == accountConfig.string_22)
 				{
 					try
 					{
-						text4 = auxiliaryAccountNames[num2];
+						recipientAccountName = auxiliaryAccountNames[recipientIndex];
 					}
 					catch
 					{
 						break;
 					}
-					num2++;
-					if (num2 < 0 || num19 <= num2)
+					recipientIndex++;
+					if (recipientIndex < 0 || auxiliaryAccountCount <= recipientIndex)
 					{
-						num2 = 0;
+						recipientIndex = 0;
 					}
-					if (num20 == num2 || auxiliaryAccountNames == null || auxiliaryAccountNames.Length <= num20)
+					if (recipientSearchStartIndex == recipientIndex || auxiliaryAccountNames == null || auxiliaryAccountNames.Length <= recipientSearchStartIndex)
 					{
 						break;
 					}
 				}
-				if (text4 != null && text4 != string.Empty && characterAccountConfig_.string_22 != text4)
+				if (recipientAccountName != null && recipientAccountName != string.Empty && accountConfig.string_22 != recipientAccountName)
 				{
-					GameProcessInteractionHelper.SendPrivatePlayerMessage(characterAccountConfig_, text4, text3);
-					Thread.Sleep(80 + 200 / num19 + coordinateReportDelayMilliseconds);
+					GameProcessInteractionHelper.SendPrivatePlayerMessage(accountConfig, recipientAccountName, encodedSyncText);
+					Thread.Sleep(80 + 200 / auxiliaryAccountCount + coordinateReportDelayMilliseconds);
 				}
 			}
-			if (Form1.roomChannelAlertEnabled > 0 && CommonUtility.GetElapsedMilliseconds(num5) >= 2500 + coordinateReportDelayMilliseconds)
+			if (Form1.roomChannelAlertEnabled > 0 && CommonUtility.GetElapsedMilliseconds(lastRoomChannelSendTicks) >= 2500 + coordinateReportDelayMilliseconds)
 			{
-				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, "Chat('CH_CHATROOM', '" + text3 + "')");
-				num5 = CommonUtility.GetCurrentTicks();
+				GameProcessInteractionHelper.ExecuteGameScript(accountConfig, "Chat('CH_CHATROOM', '" + encodedSyncText + "')");
+				lastRoomChannelSendTicks = CommonUtility.GetCurrentTicks();
 			}
 		}
-		GameInterfaceMemoryHelper.smethod_41(characterAccountConfig_, bool_0: false);
+		GameInterfaceMemoryHelper.smethod_41(accountConfig, bool_0: false);
 	}
 
 	public static void ProcessIncomingAuxiliarySyncText(CharacterAccountConfig accountConfig)
@@ -454,32 +454,32 @@ public class AuxiliaryMachineManager : Form
 		}
 		if (LicenseRuntimeCoordinator.networkTimeTicks != 0L && !auxiliaryMachineActive)
 		{
-			string text = GameInterfaceMemoryHelper.ReadLatestTopChannelText(accountConfig);
-			if (text != null && text.Length >= 10)
+			string latestChannelText = GameInterfaceMemoryHelper.ReadLatestTopChannelText(accountConfig);
+			if (latestChannelText != null && latestChannelText.Length >= 10)
 			{
-				int num = text.IndexOf(":");
-				if (0 <= num && text.Length > num)
+				int messageSeparatorIndex = latestChannelText.IndexOf(":");
+				if (0 <= messageSeparatorIndex && latestChannelText.Length > messageSeparatorIndex)
 				{
-					text = text.Substring(num + 1).Trim();
+					latestChannelText = latestChannelText.Substring(messageSeparatorIndex + 1).Trim();
 				}
-				string text2 = TransformAuxiliarySyncText(text, Form1.coordinateEncryptionValue, decode: true);
-				if (text2 != null && !(text2 == string.Empty))
+				string decodedSyncText = TransformAuxiliarySyncText(latestChannelText, Form1.coordinateEncryptionValue, decode: true);
+				if (decodedSyncText != null && !(decodedSyncText == string.Empty))
 				{
-					int num2 = text2.IndexOf("UP:");
-					if (0 <= num2)
+					int combatUpdateMarkerIndex = decodedSyncText.IndexOf("UP:");
+					if (0 <= combatUpdateMarkerIndex)
 					{
 						combatTargetSyncUpdateReceived = true;
-						string text3 = text2.Substring(num2);
-						string[] array = text3.Split(':');
-						if (array.Length >= 3 && array[2] != null && !(array[2] == string.Empty) && (Form1.multiMachinePasswordEnabled <= 0 || CommonUtility.ParseInt32OrZero(array[1]) == Form1.multiMachinePassword))
+						string combatUpdateSegment = decodedSyncText.Substring(combatUpdateMarkerIndex);
+						string[] combatUpdateParts = combatUpdateSegment.Split(':');
+						if (combatUpdateParts.Length >= 3 && combatUpdateParts[2] != null && !(combatUpdateParts[2] == string.Empty) && (Form1.multiMachinePasswordEnabled <= 0 || CommonUtility.ParseInt32OrZero(combatUpdateParts[1]) == Form1.multiMachinePassword))
 						{
-							string text4 = array[2];
-							int length = text4.Length;
-							if (length % 2 > 0)
+							string combatPayloadHex = combatUpdateParts[2];
+							int combatPayloadLength = combatPayloadHex.Length;
+							if (combatPayloadLength % 2 > 0)
 							{
-								text4 = text4.Substring(0, length - 1);
+								combatPayloadHex = combatPayloadHex.Substring(0, combatPayloadLength - 1);
 							}
-							ApplyCombatTargetSyncPayload(text4);
+							ApplyCombatTargetSyncPayload(combatPayloadHex);
 							return;
 						}
 					}
@@ -494,76 +494,76 @@ public class AuxiliaryMachineManager : Form
 						{
 							syncFieldDelimiter = "|";
 						}
-						string[] array2 = text2.Split(syncFieldDelimiter[0]);
-						int num3 = array2.Length;
-						if (num3 >= 43)
+						string[] syncFields = decodedSyncText.Split(syncFieldDelimiter[0]);
+						int syncFieldCount = syncFields.Length;
+						if (syncFieldCount >= 43)
 						{
 							try
 							{
-								if (Form1.multiMachinePasswordEnabled <= 0 || CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 34, num3)) == Form1.multiMachinePassword)
+								if (Form1.multiMachinePasswordEnabled <= 0 || CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 34, syncFieldCount)) == Form1.multiMachinePassword)
 								{
 									if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates == null)
 									{
 										CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates = new uint[2];
 									}
 									Form1.mainAccountSelfControlsCongThanhChienEnabled = 0;
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 1, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.fightState = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 2, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates[0] = CommonUtility.ParseUInt32OrZero(GetSyncFieldOrEmpty(array2, 3, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates[1] = CommonUtility.ParseUInt32OrZero(GetSyncFieldOrEmpty(array2, 4, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.entityExistsFlag = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 5, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.currentTargetEntityId = CommonUtility.ParseUInt32OrZero(GetSyncFieldOrEmpty(array2, 6, num3));
-									Form1.chienLongDongCombatEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 7, num3));
-									Form1.pkModeIndex = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 8, num3));
-									Form1.primaryBattlefieldIndex = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 9, num3));
-									Form1.secondaryBattlefieldIndex = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 10, num3));
-									ChienLongDongNavigationHelper.int_0 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 11, num3));
-									Form1.findMainAccountInCityEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 12, num3));
-									Form1.attackPlayersEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 13, num3));
-									Form1.attackMonstersEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 14, num3));
-									Form1.prioritizeBossTargetsEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 15, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_10 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 16, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.killerStatus = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 17, num3));
-									Form1.congThanhChienModeIndex = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 18, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 1, syncFieldCount));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.fightState = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 2, syncFieldCount));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates[0] = CommonUtility.ParseUInt32OrZero(GetSyncFieldOrEmpty(syncFields, 3, syncFieldCount));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates[1] = CommonUtility.ParseUInt32OrZero(GetSyncFieldOrEmpty(syncFields, 4, syncFieldCount));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.entityExistsFlag = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 5, syncFieldCount));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.currentTargetEntityId = CommonUtility.ParseUInt32OrZero(GetSyncFieldOrEmpty(syncFields, 6, syncFieldCount));
+									Form1.chienLongDongCombatEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 7, syncFieldCount));
+									Form1.pkModeIndex = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 8, syncFieldCount));
+									Form1.primaryBattlefieldIndex = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 9, syncFieldCount));
+									Form1.secondaryBattlefieldIndex = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 10, syncFieldCount));
+									ChienLongDongNavigationHelper.int_0 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 11, syncFieldCount));
+									Form1.findMainAccountInCityEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 12, syncFieldCount));
+									Form1.attackPlayersEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 13, syncFieldCount));
+									Form1.attackMonstersEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 14, syncFieldCount));
+									Form1.prioritizeBossTargetsEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 15, syncFieldCount));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_10 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 16, syncFieldCount));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.killerStatus = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 17, syncFieldCount));
+									Form1.congThanhChienModeIndex = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 18, syncFieldCount));
 									Form1.mainAccountLeavesRearCampEnabled = 1;
-									Form1.auxiliaryAccountsWaitForMainAccountEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 20, num3));
-									FormDame.combinedDamageEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 21, num3));
-									FormDame.attackInputModeIndex = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 22, num3));
-									FormDame.autoSwitchToNormalAttackEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 23, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.packedMousePosition = CommonUtility.ParseUInt32OrZero(GetSyncFieldOrEmpty(array2, 24, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.lastVirtualKeyCode = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 25, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.currentTargetEntityId = CommonUtility.ParseUInt32OrZero(GetSyncFieldOrEmpty(array2, 26, num3));
-									Form1.shareTargetEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 27, num3));
-									Form1.autoFindTargetEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 28, num3));
-									Form1.findMainAccountEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 29, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.pendingSyncCommandCode = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 30, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.entityId = CommonUtility.ParseUInt32OrZero(GetSyncFieldOrEmpty(array2, 31, num3));
-									Form1.scoutModeEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 32, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.spaceKeyPressedFlag = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 33, num3));
+									Form1.auxiliaryAccountsWaitForMainAccountEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 20, syncFieldCount));
+									FormDame.combinedDamageEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 21, syncFieldCount));
+									FormDame.attackInputModeIndex = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 22, syncFieldCount));
+									FormDame.autoSwitchToNormalAttackEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 23, syncFieldCount));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.packedMousePosition = CommonUtility.ParseUInt32OrZero(GetSyncFieldOrEmpty(syncFields, 24, syncFieldCount));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.lastVirtualKeyCode = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 25, syncFieldCount));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.currentTargetEntityId = CommonUtility.ParseUInt32OrZero(GetSyncFieldOrEmpty(syncFields, 26, syncFieldCount));
+									Form1.shareTargetEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 27, syncFieldCount));
+									Form1.autoFindTargetEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 28, syncFieldCount));
+									Form1.findMainAccountEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 29, syncFieldCount));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.pendingSyncCommandCode = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 30, syncFieldCount));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.entityId = CommonUtility.ParseUInt32OrZero(GetSyncFieldOrEmpty(syncFields, 31, syncFieldCount));
+									Form1.scoutModeEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 32, syncFieldCount));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.spaceKeyPressedFlag = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 33, syncFieldCount));
 									CharacterStateSyncCoordinator.characterSyncSnapshot_0.spaceKeyPressedFlag = CharacterStateSyncCoordinator.characterSyncSnapshot_1.spaceKeyPressedFlag;
-									Form1.int_48[0] = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 35, num3));
-									Form1.int_48[1] = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 36, num3));
-									Form1.selectedGameProfileIndex = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 37, num3));
-									MapNavigationProfileProvider.int_1 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 38, num3));
-									Form1.congThanhChienTownPortalEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 39, num3));
-									Form1.congThanhChienTownPortalMenuIndices = GetSyncFieldOrEmpty(array2, 40, num3);
-									Form1.syncPkModeWithMainAccountEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 41, num3));
-									Form1.allAccountsGoToCoordinateEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 42, num3));
-									Form1.gatheringPointEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 43, num3));
-									if (num3 > 44)
+									Form1.int_48[0] = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 35, syncFieldCount));
+									Form1.int_48[1] = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 36, syncFieldCount));
+									Form1.selectedGameProfileIndex = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 37, syncFieldCount));
+									MapNavigationProfileProvider.int_1 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 38, syncFieldCount));
+									Form1.congThanhChienTownPortalEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 39, syncFieldCount));
+									Form1.congThanhChienTownPortalMenuIndices = GetSyncFieldOrEmpty(syncFields, 40, syncFieldCount);
+									Form1.syncPkModeWithMainAccountEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 41, syncFieldCount));
+									Form1.allAccountsGoToCoordinateEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 42, syncFieldCount));
+									Form1.gatheringPointEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 43, syncFieldCount));
+									if (syncFieldCount > 44)
 									{
-										int num4 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 44, num3));
-										if (num4 > 0 && Form1.characterAccountConfig_1 != null)
+										int sharedSlotFlagValue = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(syncFields, 44, syncFieldCount));
+										if (sharedSlotFlagValue > 0 && Form1.characterAccountConfig_1 != null)
 										{
-											for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
+											for (int accountIndex = 0; accountIndex < Form1.characterAccountConfig_1.Length; accountIndex++)
 											{
-												if (num4 == 1 && Form1.characterAccountConfig_1[i].bool_25)
+												if (sharedSlotFlagValue == 1 && Form1.characterAccountConfig_1[accountIndex].bool_25)
 												{
-													GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.uint_22, 1, 4);
+													GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[accountIndex], GameProcessInteractionHelper.uint_22, 1, 4);
 												}
 												else
 												{
-													GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.uint_22, 0, 4);
+													GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[accountIndex], GameProcessInteractionHelper.uint_22, 0, 4);
 												}
 											}
 										}
@@ -582,7 +582,7 @@ public class AuxiliaryMachineManager : Form
 			if (CommonUtility.GetElapsedMilliseconds(CharacterStateSyncCoordinator.characterSyncSnapshot_1.long_1) > 6000L)
 			{
 				GameInterfaceMemoryHelper.smethod_41(accountConfig, bool_0: false);
-				if (CommonUtility.MatchesGameTextPattern(text, "g\u00adêi nµy"))
+				if (CommonUtility.MatchesGameTextPattern(latestChannelText, "g\u00adêi nµy"))
 				{
 					GameInterfaceMemoryHelper.WriteLatestTopChannelText(accountConfig, "0K..");
 					GameProcessInteractionHelper.ExecuteGameScript(accountConfig, "Switch([[trade]])");

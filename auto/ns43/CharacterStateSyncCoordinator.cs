@@ -51,32 +51,32 @@ internal class CharacterStateSyncCoordinator
 
 	public static void RefreshPrimaryCharacterSyncSnapshot()
 	{
-		CharacterAccountConfig characterAccountConfig_ = default(CharacterAccountConfig);
+		CharacterAccountConfig primaryAccountConfig = default(CharacterAccountConfig);
 		characterSyncSnapshot_0 = new CharacterSyncSnapshot
 		{
 			coordinates = new uint[2]
 		};
-		int num = -1;
-		int num2 = -1;
-		int num3 = 0;
-		string[] array = new string[2] { "<color=yellow>Ac chÝnh: XXX bÞ mÊt kÕt nèi.", "<color=yellow>Ac chÝnh: XXX ®ang ho¹t ®éng." };
-		long long_ = 0L;
-		long long_2 = 0L;
-		int int_ = 0;
-		int num4 = 0;
-		int num5 = 0;
-		byte[] byte_ = new byte[1];
-		byte[] byte_2 = new byte[2];
-		byte[] array2 = new byte[4];
+		int lastPrimaryAccountId = -1;
+		int previousEntityExistsFlag = -1;
+		int accountRefreshCountdown = 0;
+		string[] primaryStatusTemplates = new string[2] { "<color=yellow>Ac chÝnh: XXX bÞ mÊt kÕt nèi.", "<color=yellow>Ac chÝnh: XXX ®ang ho¹t ®éng." };
+		long lastChannelSelectionTicks = 0L;
+		long lastGlobalStateRefreshTicks = 0L;
+		int bytesTransferred = 0;
+		int missingEntityRetryCount = 0;
+		int entityStateTransitionRetryCount = 0;
+		byte[] globalByteBuffer = new byte[1];
+		byte[] globalTwoByteBuffer = new byte[2];
+		byte[] readBuffer = new byte[4];
 		while (!CommonUtility.bool_0)
 		{
 			Thread.Sleep(200);
-			if (CommonUtility.GetElapsedMilliseconds(long_2) > 6000L)
+			if (CommonUtility.GetElapsedMilliseconds(lastGlobalStateRefreshTicks) > 6000L)
 			{
 				uint_0 = ReadCurrentCharacterTableValuesForAllAccounts();
-				long_2 = CommonUtility.GetCurrentTicks();
-				WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_2 * 4, byte_, 1, ref int_);
-				WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_3 * 4, byte_2, 2, ref int_);
+				lastGlobalStateRefreshTicks = CommonUtility.GetCurrentTicks();
+				WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_2 * 4, globalByteBuffer, 1, ref bytesTransferred);
+				WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_3 * 4, globalTwoByteBuffer, 2, ref bytesTransferred);
 			}
 			if (Form1.mainAccountId != 0)
 			{
@@ -84,128 +84,128 @@ internal class CharacterStateSyncCoordinator
 				{
 					if (Form1.remoteAuxiliarySyncModeEnabled <= 0 && Form1.manualAuxiliaryMachineModeEnabled > 0)
 					{
-						AuxiliaryMachineManager.ProcessIncomingAuxiliarySyncText(characterAccountConfig_);
+						AuxiliaryMachineManager.ProcessIncomingAuxiliarySyncText(primaryAccountConfig);
 					}
 					if (characterSyncSnapshot_1.pendingSyncCommandCode > 0)
 					{
 						ApplySyncCommandToEnabledAccounts(characterSyncSnapshot_1.pendingSyncCommandCode);
 					}
-					if (CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
+					if (CommonUtility.GetElapsedMilliseconds(lastChannelSelectionTicks) > 30000L)
 					{
-						GameInterfaceMemoryHelper.SelectLastChannelTab(characterAccountConfig_, 0u);
-						long_ = CommonUtility.GetCurrentTicks();
+						GameInterfaceMemoryHelper.SelectLastChannelTab(primaryAccountConfig, 0u);
+						lastChannelSelectionTicks = CommonUtility.GetCurrentTicks();
 					}
 					characterSyncSnapshot_1.pendingSyncCommandCode = 0;
 				}
-				if (num != characterAccountConfig_.int_136)
+				if (lastPrimaryAccountId != primaryAccountConfig.int_136)
 				{
-					num = characterAccountConfig_.int_136;
+					lastPrimaryAccountId = primaryAccountConfig.int_136;
 					SignalNonPrimaryAccountsForSync();
-					BroadcastSyncStatusMessage("<color=yellow>Ac chÝnh: " + characterAccountConfig_.string_22);
-					num3 = -100;
+					BroadcastSyncStatusMessage("<color=yellow>Ac chÝnh: " + primaryAccountConfig.string_22);
+					accountRefreshCountdown = -100;
 				}
-				num3--;
-				if (num3 <= 0)
+				accountRefreshCountdown--;
+				if (accountRefreshCountdown <= 0)
 				{
-					int num6 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, Form1.mainAccountId);
-					if (num6 < 0 || WindowsInteropHelper.IsProcessExitedOrUnavailable(Form1.characterAccountConfig_1[num6].process_0))
+					int primaryAccountIndex = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, Form1.mainAccountId);
+					if (primaryAccountIndex < 0 || WindowsInteropHelper.IsProcessExitedOrUnavailable(Form1.characterAccountConfig_1[primaryAccountIndex].process_0))
 					{
 						Form1.mainAccountId = 0;
 						continue;
 					}
-					characterAccountConfig_ = Form1.characterAccountConfig_1[num6];
-					num3 = 10;
+					primaryAccountConfig = Form1.characterAccountConfig_1[primaryAccountIndex];
+					accountRefreshCountdown = 10;
 				}
-				characterSyncSnapshot_0.gameModuleBaseAddress = characterAccountConfig_.uint_7;
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array2, 4, ref int_);
-				uint num7 = BitConverter.ToUInt32(array2, 0);
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, array2, 4, ref int_);
-				uint num8 = BitConverter.ToUInt32(array2, 0);
-				uint num9 = num8 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, array2, 4, ref int_);
-				uint num10 = BitConverter.ToUInt32(array2, 0);
-				uint num11 = num10 + num9;
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_50.resolvedValue, array2, 4, ref int_);
-				characterSyncSnapshot_0.entityExistsFlag = BitConverter.ToInt32(array2, 0);
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, array2, 4, ref int_);
-				int num12 = BitConverter.ToInt32(array2, 0);
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, array2, 4, ref int_);
-				uint num13 = BitConverter.ToUInt32(array2, 0);
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, array2, 4, ref int_);
-				uint num14 = BitConverter.ToUInt32(array2, 0);
-				if (num12 <= 0 || num13 == 0 || num14 == 0)
+				characterSyncSnapshot_0.gameModuleBaseAddress = primaryAccountConfig.uint_7;
+				WindowsInteropHelper.ReadProcessMemory(primaryAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, readBuffer, 4, ref bytesTransferred);
+				uint memoryRootPointer = BitConverter.ToUInt32(readBuffer, 0);
+				WindowsInteropHelper.ReadProcessMemory(primaryAccountConfig.int_137, memoryRootPointer + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, readBuffer, 4, ref bytesTransferred);
+				uint memoryEntryIndex = BitConverter.ToUInt32(readBuffer, 0);
+				uint memoryEntryOffset = memoryEntryIndex * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+				WindowsInteropHelper.ReadProcessMemory(primaryAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, readBuffer, 4, ref bytesTransferred);
+				uint memoryTableBaseAddress = BitConverter.ToUInt32(readBuffer, 0);
+				uint characterStateAddress = memoryTableBaseAddress + memoryEntryOffset;
+				WindowsInteropHelper.ReadProcessMemory(primaryAccountConfig.int_137, characterStateAddress + GameConfigurationManager.memorySignatureScanConfig_50.resolvedValue, readBuffer, 4, ref bytesTransferred);
+				characterSyncSnapshot_0.entityExistsFlag = BitConverter.ToInt32(readBuffer, 0);
+				WindowsInteropHelper.ReadProcessMemory(primaryAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, readBuffer, 4, ref bytesTransferred);
+				int currentMapId = BitConverter.ToInt32(readBuffer, 0);
+				WindowsInteropHelper.ReadProcessMemory(primaryAccountConfig.int_137, characterStateAddress + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, readBuffer, 4, ref bytesTransferred);
+				uint coordinateX = BitConverter.ToUInt32(readBuffer, 0);
+				WindowsInteropHelper.ReadProcessMemory(primaryAccountConfig.int_137, characterStateAddress + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, readBuffer, 4, ref bytesTransferred);
+				uint coordinateY = BitConverter.ToUInt32(readBuffer, 0);
+				if (currentMapId <= 0 || coordinateX == 0 || coordinateY == 0)
 				{
 					Thread.Sleep(10);
 					continue;
 				}
-				if (characterSyncSnapshot_0.entityExistsFlag <= 0 && num4 <= 60)
+				if (characterSyncSnapshot_0.entityExistsFlag <= 0 && missingEntityRetryCount <= 60)
 				{
-					num4++;
+					missingEntityRetryCount++;
 					Thread.Sleep(10);
 					continue;
 				}
-				num4 = 0;
-				if (num2 != characterSyncSnapshot_0.entityExistsFlag)
+				missingEntityRetryCount = 0;
+				if (previousEntityExistsFlag != characterSyncSnapshot_0.entityExistsFlag)
 				{
 					if (characterSyncSnapshot_0.entityExistsFlag <= 0)
 					{
 						characterSyncSnapshot_0.snapshotUnavailable = true;
-						num5++;
-						if (num5 < 3)
+						entityStateTransitionRetryCount++;
+						if (entityStateTransitionRetryCount < 3)
 						{
 							continue;
 						}
 					}
-					num2 = characterSyncSnapshot_0.entityExistsFlag;
-					BroadcastSyncStatusMessage(array[num2].Replace("XXX", characterAccountConfig_.string_22));
+					previousEntityExistsFlag = characterSyncSnapshot_0.entityExistsFlag;
+					BroadcastSyncStatusMessage(primaryStatusTemplates[previousEntityExistsFlag].Replace("XXX", primaryAccountConfig.string_22));
 				}
-				num5 = 0;
-				characterSyncSnapshot_0.accountId = characterAccountConfig_.int_136;
-				characterSyncSnapshot_0.processHandle = characterAccountConfig_.int_137;
-				characterSyncSnapshot_0.process = characterAccountConfig_.process_0;
-				characterSyncSnapshot_0.windowHandle = characterAccountConfig_.uint_4;
-				characterSyncSnapshot_0.entityId = WindowsInteropHelper.ReadProcessUInt32(num11, characterAccountConfig_.int_137);
+				entityStateTransitionRetryCount = 0;
+				characterSyncSnapshot_0.accountId = primaryAccountConfig.int_136;
+				characterSyncSnapshot_0.processHandle = primaryAccountConfig.int_137;
+				characterSyncSnapshot_0.process = primaryAccountConfig.process_0;
+				characterSyncSnapshot_0.windowHandle = primaryAccountConfig.uint_4;
+				characterSyncSnapshot_0.entityId = WindowsInteropHelper.ReadProcessUInt32(characterStateAddress, primaryAccountConfig.int_137);
 				if (Form1.remoteAuxiliarySyncModeEnabled <= 0 && Form1.manualAuxiliaryMachineModeEnabled <= 0)
 				{
-					characterSyncSnapshot_0.packedMousePosition = GameInterfaceMemoryHelper.ReadPackedMousePosition(characterAccountConfig_);
+					characterSyncSnapshot_0.packedMousePosition = GameInterfaceMemoryHelper.ReadPackedMousePosition(primaryAccountConfig);
 				}
 				else
 				{
 					characterSyncSnapshot_0.packedMousePosition = characterSyncSnapshot_1.packedMousePosition;
 					characterSyncSnapshot_0.lastVirtualKeyCode = characterSyncSnapshot_1.lastVirtualKeyCode;
 				}
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_43.resolvedValue, array2, 4, ref int_);
-				characterSyncSnapshot_0.fightState = BitConverter.ToInt32(array2, 0);
+				WindowsInteropHelper.ReadProcessMemory(primaryAccountConfig.int_137, characterStateAddress + GameConfigurationManager.memorySignatureScanConfig_43.resolvedValue, readBuffer, 4, ref bytesTransferred);
+				characterSyncSnapshot_0.fightState = BitConverter.ToInt32(readBuffer, 0);
 				if ((Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && characterSyncSnapshot_1.mapId > 0)
 				{
 					characterSyncSnapshot_0.killerStatus = characterSyncSnapshot_1.killerStatus;
 				}
 				else
 				{
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_56.resolvedValue, array2, 4, ref int_);
-					characterSyncSnapshot_0.killerStatus = BitConverter.ToInt32(array2, 0);
+					WindowsInteropHelper.ReadProcessMemory(primaryAccountConfig.int_137, characterStateAddress + GameConfigurationManager.memorySignatureScanConfig_56.resolvedValue, readBuffer, 4, ref bytesTransferred);
+					characterSyncSnapshot_0.killerStatus = BitConverter.ToInt32(readBuffer, 0);
 				}
 				characterSyncSnapshot_0.lastRefreshTicks = CommonUtility.GetCurrentTicks();
 				if (characterSyncSnapshot_0.coordinates == null)
 				{
 					characterSyncSnapshot_0.coordinates = new uint[2];
 				}
-				characterSyncSnapshot_0.coordinates[0] = num13;
-				characterSyncSnapshot_0.coordinates[1] = num14;
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_54.resolvedValue, array2, 4, ref int_);
-				characterSyncSnapshot_0.int_5 = BitConverter.ToInt32(array2, 0);
-				characterSyncSnapshot_0.characterName = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num11 + GameConfigurationManager.memorySignatureScanConfig_16.resolvedValue, characterAccountConfig_.int_137, 32);
-				if (num12 != characterSyncSnapshot_0.mapId)
+				characterSyncSnapshot_0.coordinates[0] = coordinateX;
+				characterSyncSnapshot_0.coordinates[1] = coordinateY;
+				WindowsInteropHelper.ReadProcessMemory(primaryAccountConfig.int_137, characterStateAddress + GameConfigurationManager.memorySignatureScanConfig_54.resolvedValue, readBuffer, 4, ref bytesTransferred);
+				characterSyncSnapshot_0.int_5 = BitConverter.ToInt32(readBuffer, 0);
+				characterSyncSnapshot_0.characterName = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(characterStateAddress + GameConfigurationManager.memorySignatureScanConfig_16.resolvedValue, primaryAccountConfig.int_137, 32);
+				if (currentMapId != characterSyncSnapshot_0.mapId)
 				{
-					characterSyncSnapshot_0.mapId = num12;
+					characterSyncSnapshot_0.mapId = currentMapId;
 					SignalNonPrimaryAccountsForSync();
 				}
-				characterSyncSnapshot_0.snapshotUnavailable = num10 == 0 || characterSyncSnapshot_0.entityExistsFlag == 0 || characterSyncSnapshot_0.mapId == 0 || characterSyncSnapshot_0.characterName == string.Empty || characterSyncSnapshot_0.mapName == string.Empty;
+				characterSyncSnapshot_0.snapshotUnavailable = memoryTableBaseAddress == 0 || characterSyncSnapshot_0.entityExistsFlag == 0 || characterSyncSnapshot_0.mapId == 0 || characterSyncSnapshot_0.characterName == string.Empty || characterSyncSnapshot_0.mapName == string.Empty;
 				if (characterSyncSnapshot_0.mapId != 162)
 				{
 					if (characterSyncSnapshot_0.mapId != 321)
 					{
-						characterSyncSnapshot_0.mapName = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(characterAccountConfig_.uint_7 + GameConfigurationManager.memorySignatureScanConfig_28.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_29.resolvedValue, characterAccountConfig_.int_137, 48);
+						characterSyncSnapshot_0.mapName = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(primaryAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_28.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_29.resolvedValue, primaryAccountConfig.int_137, 48);
 					}
 					else
 					{
@@ -216,41 +216,41 @@ internal class CharacterStateSyncCoordinator
 				{
 					characterSyncSnapshot_0.mapName = "§¹i Lý";
 				}
-				uint uint_ = 0u;
+				uint currentTargetEntityId = 0u;
 				if (characterSyncSnapshot_0.fightState > 0)
 				{
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_72.resolvedValue, array2, 4, ref int_);
-					uint num15 = BitConverter.ToUInt32(array2, 0);
-					if ((int)num15 > 0)
+					WindowsInteropHelper.ReadProcessMemory(primaryAccountConfig.int_137, characterStateAddress + GameConfigurationManager.memorySignatureScanConfig_72.resolvedValue, readBuffer, 4, ref bytesTransferred);
+					uint targetEntryIndex = BitConverter.ToUInt32(readBuffer, 0);
+					if ((int)targetEntryIndex > 0)
 					{
-						uint num16 = num10 + num15 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_50.resolvedValue, array2, 4, ref int_);
-						if (BitConverter.ToUInt32(array2, 0) != 0)
+						uint targetEntryAddress = memoryTableBaseAddress + targetEntryIndex * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+						WindowsInteropHelper.ReadProcessMemory(primaryAccountConfig.int_137, targetEntryAddress + GameConfigurationManager.memorySignatureScanConfig_50.resolvedValue, readBuffer, 4, ref bytesTransferred);
+						if (BitConverter.ToUInt32(readBuffer, 0) != 0)
 						{
-							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_52.resolvedValue, array2, 4, ref int_);
-							uint num17 = BitConverter.ToUInt32(array2, 0);
-							if (num17 <= 1)
+							WindowsInteropHelper.ReadProcessMemory(primaryAccountConfig.int_137, targetEntryAddress + GameConfigurationManager.memorySignatureScanConfig_52.resolvedValue, readBuffer, 4, ref bytesTransferred);
+							uint targetEntryStatusCode = BitConverter.ToUInt32(readBuffer, 0);
+							if (targetEntryStatusCode <= 1)
 							{
-								uint_ = WindowsInteropHelper.ReadProcessUInt32(num16, characterAccountConfig_.int_137);
+								currentTargetEntityId = WindowsInteropHelper.ReadProcessUInt32(targetEntryAddress, primaryAccountConfig.int_137);
 							}
 						}
 					}
-					num15 = 0u;
+					targetEntryIndex = 0u;
 				}
-				characterSyncSnapshot_0.currentTargetEntityId = uint_;
+				characterSyncSnapshot_0.currentTargetEntityId = currentTargetEntityId;
 			}
 			else
 			{
 				if (ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136 > 0)
 				{
 					characterSyncSnapshot_0.packedMousePosition = GameInterfaceMemoryHelper.ReadPackedMousePosition(ApplicationRuntimeCoordinator.foregroundCharacterAccount);
-					uint[] array3 = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(ApplicationRuntimeCoordinator.foregroundCharacterAccount);
-					if (array3 != null)
+					uint[] foregroundCoordinates = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(ApplicationRuntimeCoordinator.foregroundCharacterAccount);
+					if (foregroundCoordinates != null)
 					{
 						characterSyncSnapshot_0.coordinates = new uint[2]
 						{
-							array3[0],
-							array3[1]
+							foregroundCoordinates[0],
+							foregroundCoordinates[1]
 						};
 					}
 				}
@@ -259,10 +259,10 @@ internal class CharacterStateSyncCoordinator
 				characterSyncSnapshot_0.currentTargetEntityId = 0u;
 				characterSyncSnapshot_0.mapId = 0;
 				characterSyncSnapshot_0.snapshotUnavailable = false;
-				num = -1;
+				lastPrimaryAccountId = -1;
 			}
-			WindowsInteropHelper.WriteProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_4 * 4, byte_, 1, ref int_);
-			WindowsInteropHelper.WriteProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_5 * 4, byte_2, 2, ref int_);
+			WindowsInteropHelper.WriteProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_4 * 4, globalByteBuffer, 1, ref bytesTransferred);
+			WindowsInteropHelper.WriteProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_5 * 4, globalTwoByteBuffer, 2, ref bytesTransferred);
 		}
 	}
 
@@ -270,17 +270,17 @@ internal class CharacterStateSyncCoordinator
 	{
 		if (Form1.characterAccountConfig_1 != null && Form1.characterAccountConfig_1.Length != 0)
 		{
-			uint[] array = new uint[Form1.characterAccountConfig_1.Length];
-			for (int i = 0; i < array.Length; i++)
+			uint[] tableValues = new uint[Form1.characterAccountConfig_1.Length];
+			for (int accountIndex = 0; accountIndex < tableValues.Length; accountIndex++)
 			{
-				CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[i];
-				uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, characterAccountConfig.int_137);
-				uint num2 = WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, characterAccountConfig.int_137);
-				uint num3 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, characterAccountConfig.int_137);
-				uint uint_ = num3 + num2 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
-				array[i] = WindowsInteropHelper.ReadProcessUInt32(uint_, characterAccountConfig.int_137);
+				CharacterAccountConfig accountConfig = Form1.characterAccountConfig_1[accountIndex];
+				uint memoryRootPointer = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, accountConfig.int_137);
+				uint memoryEntryIndex = WindowsInteropHelper.ReadProcessUInt32(memoryRootPointer + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, accountConfig.int_137);
+				uint memoryTableBaseAddress = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, accountConfig.int_137);
+				uint characterStateAddress = memoryTableBaseAddress + memoryEntryIndex * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+				tableValues[accountIndex] = WindowsInteropHelper.ReadProcessUInt32(characterStateAddress, accountConfig.int_137);
 			}
-			return array;
+			return tableValues;
 		}
 		return null;
 	}
@@ -293,11 +293,11 @@ internal class CharacterStateSyncCoordinator
 			{
 				return;
 			}
-			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
+			for (int accountIndex = 0; accountIndex < Form1.characterAccountConfig_1.Length; accountIndex++)
 			{
-				if (Form1.characterAccountConfig_1[i].int_136 != characterSyncSnapshot_0.accountId)
+				if (Form1.characterAccountConfig_1[accountIndex].int_136 != characterSyncSnapshot_0.accountId)
 				{
-					GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.routeSyncInterruptSlot, 1, 4);
+					GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[accountIndex], GameProcessInteractionHelper.routeSyncInterruptSlot, 1, 4);
 				}
 			}
 		}
@@ -306,7 +306,7 @@ internal class CharacterStateSyncCoordinator
 		}
 	}
 
-	private static void BroadcastSyncStatusMessage(string string_0)
+	private static void BroadcastSyncStatusMessage(string message)
 	{
 		if (Form1.changeWindowTitleEnabled > 0 || Form1.characterAccountConfig_1 == null)
 		{
@@ -314,17 +314,17 @@ internal class CharacterStateSyncCoordinator
 		}
 		try
 		{
-			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
+			for (int accountIndex = 0; accountIndex < Form1.characterAccountConfig_1.Length; accountIndex++)
 			{
-				int num = 0;
-				while (Form1.characterAccountConfig_1[i].bool_2 && num < 30)
+				int busyWaitCount = 0;
+				while (Form1.characterAccountConfig_1[accountIndex].bool_2 && busyWaitCount < 30)
 				{
 					Thread.Sleep(10);
-					num++;
+					busyWaitCount++;
 				}
-				if (!Form1.characterAccountConfig_1[i].bool_2)
+				if (!Form1.characterAccountConfig_1[accountIndex].bool_2)
 				{
-					GameProcessInteractionHelper.PrintGameMessage(Form1.characterAccountConfig_1[i], string_0);
+					GameProcessInteractionHelper.PrintGameMessage(Form1.characterAccountConfig_1[accountIndex], message);
 				}
 			}
 		}
@@ -333,98 +333,98 @@ internal class CharacterStateSyncCoordinator
 		}
 	}
 
-	public static int RefreshTrackedEntityPositionAndDetectSeparation(uint uint_1, ref uint[] uint_2, ref uint uint_3)
+	public static int RefreshTrackedEntityPositionAndDetectSeparation(uint trackedEntityId, ref uint[] trackedCoordinates, ref uint trackedEntryIndex)
 	{
-		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, characterSyncSnapshot_0.processHandle);
-		uint num2 = WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, characterSyncSnapshot_0.processHandle) * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
-		uint num3 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, characterSyncSnapshot_0.processHandle);
-		uint num4 = num3 + num2;
-		uint num5 = num3 + uint_3 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
-		uint num6 = WindowsInteropHelper.ReadProcessUInt32(num5, characterSyncSnapshot_0.processHandle);
-		uint num7 = WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterSyncSnapshot_0.processHandle);
-		uint num8 = WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterSyncSnapshot_0.processHandle);
-		if (num7 != 0 && num8 != 0)
+		uint memoryRootPointer = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, characterSyncSnapshot_0.processHandle);
+		uint currentEntryOffset = WindowsInteropHelper.ReadProcessUInt32(memoryRootPointer + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, characterSyncSnapshot_0.processHandle) * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+		uint memoryTableBaseAddress = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, characterSyncSnapshot_0.processHandle);
+		uint currentCharacterStateAddress = memoryTableBaseAddress + currentEntryOffset;
+		uint trackedEntryAddress = memoryTableBaseAddress + trackedEntryIndex * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+		uint entityIdAtTrackedEntry = WindowsInteropHelper.ReadProcessUInt32(trackedEntryAddress, characterSyncSnapshot_0.processHandle);
+		uint currentCharacterX = WindowsInteropHelper.ReadProcessUInt32(currentCharacterStateAddress + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterSyncSnapshot_0.processHandle);
+		uint currentCharacterY = WindowsInteropHelper.ReadProcessUInt32(currentCharacterStateAddress + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterSyncSnapshot_0.processHandle);
+		if (currentCharacterX != 0 && currentCharacterY != 0)
 		{
 			if (characterSyncSnapshot_0.coordinates == null)
 			{
 				characterSyncSnapshot_0.coordinates = new uint[2];
 			}
-			characterSyncSnapshot_0.coordinates[0] = num7;
-			characterSyncSnapshot_0.coordinates[1] = num8;
-			if (num6 != uint_1)
+			characterSyncSnapshot_0.coordinates[0] = currentCharacterX;
+			characterSyncSnapshot_0.coordinates[1] = currentCharacterY;
+			if (entityIdAtTrackedEntry != trackedEntityId)
 			{
-				int int_ = 0;
-				byte[] array = new byte[4];
-				uint num9 = characterSyncSnapshot_0.gameModuleBaseAddress;
-				if (num9 == 0)
+				int bytesRead = 0;
+				byte[] readBuffer = new byte[4];
+				uint moduleBaseAddress = characterSyncSnapshot_0.gameModuleBaseAddress;
+				if (moduleBaseAddress == 0)
 				{
-					num9 = 4194304u;
+					moduleBaseAddress = 4194304u;
 				}
-				uint uint_4 = num9 + GameConfigurationManager.memorySignatureScanConfig_9.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_10.resolvedValue + 4;
-				WindowsInteropHelper.ReadProcessMemory(characterSyncSnapshot_0.processHandle, uint_4, array, 4, ref int_);
-				if (int_ != 4)
+				uint entityCountAddress = moduleBaseAddress + GameConfigurationManager.memorySignatureScanConfig_9.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_10.resolvedValue + 4;
+				WindowsInteropHelper.ReadProcessMemory(characterSyncSnapshot_0.processHandle, entityCountAddress, readBuffer, 4, ref bytesRead);
+				if (bytesRead != 4)
 				{
 					return 0;
 				}
-				int num10 = BitConverter.ToInt32(array, 0);
-				if (num10 <= 1)
+				int activeEntityCount = BitConverter.ToInt32(readBuffer, 0);
+				if (activeEntityCount <= 1)
 				{
 					return 0;
 				}
-				int num11 = (int)WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, characterSyncSnapshot_0.processHandle);
-				int num12 = 0;
-				uint_3 = 0u;
-				for (uint num13 = 1u; num13 < 256; num13++)
+				int currentEntryIndex = (int)WindowsInteropHelper.ReadProcessUInt32(memoryRootPointer + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, characterSyncSnapshot_0.processHandle);
+				int scannedEntityCount = 0;
+				trackedEntryIndex = 0u;
+				for (uint candidateEntryIndex = 1u; candidateEntryIndex < 256; candidateEntryIndex++)
 				{
-					if (num13 % 50 == 0)
+					if (candidateEntryIndex % 50 == 0)
 					{
 						Thread.Sleep(10);
 					}
-					if (num10 <= num12)
+					if (activeEntityCount <= scannedEntityCount)
 					{
 						break;
 					}
-					if (num13 == num11)
+					if (candidateEntryIndex == currentEntryIndex)
 					{
-						num12++;
+						scannedEntityCount++;
 						continue;
 					}
-					num5 = num3 + num13 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
-					WindowsInteropHelper.ReadProcessMemory(characterSyncSnapshot_0.processHandle, num5 + GameConfigurationManager.memorySignatureScanConfig_16.resolvedValue, array, 4, ref int_);
-					if (array[0] == 0 || int_ != 4)
+					trackedEntryAddress = memoryTableBaseAddress + candidateEntryIndex * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+					WindowsInteropHelper.ReadProcessMemory(characterSyncSnapshot_0.processHandle, trackedEntryAddress + GameConfigurationManager.memorySignatureScanConfig_16.resolvedValue, readBuffer, 4, ref bytesRead);
+					if (readBuffer[0] == 0 || bytesRead != 4)
 					{
 						continue;
 					}
-					num12++;
-					WindowsInteropHelper.ReadProcessMemory(characterSyncSnapshot_0.processHandle, num5 + GameConfigurationManager.memorySignatureScanConfig_50.resolvedValue, array, 4, ref int_);
-					if (int_ == 4 && BitConverter.ToInt32(array, 0) > 0)
+					scannedEntityCount++;
+					WindowsInteropHelper.ReadProcessMemory(characterSyncSnapshot_0.processHandle, trackedEntryAddress + GameConfigurationManager.memorySignatureScanConfig_50.resolvedValue, readBuffer, 4, ref bytesRead);
+					if (bytesRead == 4 && BitConverter.ToInt32(readBuffer, 0) > 0)
 					{
-						num6 = WindowsInteropHelper.ReadProcessUInt32(num5, characterSyncSnapshot_0.processHandle);
-						if (uint_1 == num6)
+						entityIdAtTrackedEntry = WindowsInteropHelper.ReadProcessUInt32(trackedEntryAddress, characterSyncSnapshot_0.processHandle);
+						if (trackedEntityId == entityIdAtTrackedEntry)
 						{
-							uint_3 = num13;
+							trackedEntryIndex = candidateEntryIndex;
 							break;
 						}
 					}
 				}
-				if (uint_3 == 0)
+				if (trackedEntryIndex == 0)
 				{
 					return -1;
 				}
 			}
-			long num14 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, characterSyncSnapshot_0.coordinates);
-			uint_2 = new uint[2]
+			long previousDistanceSquared = GameAutomationUtility.GetSquaredCoordinateDistance(trackedCoordinates, characterSyncSnapshot_0.coordinates);
+			trackedCoordinates = new uint[2]
 			{
-				WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterSyncSnapshot_0.processHandle),
-				WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterSyncSnapshot_0.processHandle)
+				WindowsInteropHelper.ReadProcessUInt32(trackedEntryAddress + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterSyncSnapshot_0.processHandle),
+				WindowsInteropHelper.ReadProcessUInt32(trackedEntryAddress + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterSyncSnapshot_0.processHandle)
 			};
-			long num15 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, characterSyncSnapshot_0.coordinates);
-			int num16 = Form1.mainAccountSearchDistance;
-			if (num16 < 200)
+			long currentDistanceSquared = GameAutomationUtility.GetSquaredCoordinateDistance(trackedCoordinates, characterSyncSnapshot_0.coordinates);
+			int separationDistanceThreshold = Form1.mainAccountSearchDistance;
+			if (separationDistanceThreshold < 200)
 			{
-				num16 = 200;
+				separationDistanceThreshold = 200;
 			}
-			if (num15 - num14 > 22500L && num16 * num16 <= num15 && num15 <= 1000000L)
+			if (currentDistanceSquared - previousDistanceSquared > 22500L && separationDistanceThreshold * separationDistanceThreshold <= currentDistanceSquared && currentDistanceSquared <= 1000000L)
 			{
 				return 1;
 			}
@@ -433,83 +433,83 @@ internal class CharacterStateSyncCoordinator
 		return 0;
 	}
 
-	public static void MoveTowardCoordinateWithOffset(CharacterAccountConfig characterAccountConfig_0, uint[] uint_1, uint[] uint_2, bool bool_2 = false)
+	public static void MoveTowardCoordinateWithOffset(CharacterAccountConfig accountConfig, uint[] sourceCoordinates, uint[] destinationCoordinates, bool bool_2 = false)
 	{
-		if (uint_2 != null && uint_2[0] != 0 && uint_2[1] != 0)
+		if (destinationCoordinates != null && destinationCoordinates[0] != 0 && destinationCoordinates[1] != 0)
 		{
-			bool flag = uint_1 != null && uint_1[0] != 0 && uint_1[1] != 0;
-			long num = GameAutomationUtility.GetSquaredCoordinateDistance(uint_1, uint_2);
-			if (flag && (bool_2 || num < 14400L))
+			bool hasSourceCoordinates = sourceCoordinates != null && sourceCoordinates[0] != 0 && sourceCoordinates[1] != 0;
+			long distanceSquared = GameAutomationUtility.GetSquaredCoordinateDistance(sourceCoordinates, destinationCoordinates);
+			if (hasSourceCoordinates && (bool_2 || distanceSquared < 14400L))
 			{
-				uint[] uint_3 = GameAutomationUtility.GetCoordinateOffsetAlongLine(uint_1, uint_2, -150);
-				GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_3);
+				uint[] offsetDestinationCoordinates = GameAutomationUtility.GetCoordinateOffsetAlongLine(sourceCoordinates, destinationCoordinates, -150);
+				GameProcessInteractionHelper.RunToCoordinates(accountConfig, offsetDestinationCoordinates);
 			}
 			else
 			{
-				GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_2);
+				GameProcessInteractionHelper.RunToCoordinates(accountConfig, destinationCoordinates);
 			}
 			Thread.Sleep(60);
 		}
 	}
 
-	public static bool DetectPrimaryAccountInputActivity(CharacterAccountConfig characterAccountConfig_0, ref int int_1)
+	public static bool DetectPrimaryAccountInputActivity(CharacterAccountConfig accountConfig, ref int previousKeyPressCount)
 	{
-		if (ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136 == characterAccountConfig_0.int_136)
+		if (ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136 == accountConfig.int_136)
 		{
 			if (Form1.globalHotkeysEnabled > 0)
 			{
 				return 48 < characterSyncSnapshot_0.lastVirtualKeyCode && characterSyncSnapshot_0.lastVirtualKeyCode < 58;
 			}
-			int num = GameInterfaceMemoryHelper.ReadKeyPressCount(characterAccountConfig_0);
-			bool result = int_1 != num;
-			int_1 = num;
+			int currentKeyPressCount = GameInterfaceMemoryHelper.ReadKeyPressCount(accountConfig);
+			bool result = previousKeyPressCount != currentKeyPressCount;
+			previousKeyPressCount = currentKeyPressCount;
 			return result;
 		}
 		return false;
 	}
 
-	public static void ApplySyncCommandToEnabledAccounts(int int_1)
+	public static void ApplySyncCommandToEnabledAccounts(int syncCommandCode)
 	{
 		if (Form1.characterAccountConfig_1 == null)
 		{
 			return;
 		}
-		for (int i = 0; Form1.characterAccountConfig_1.Length > i; i++)
+		for (int accountIndex = 0; Form1.characterAccountConfig_1.Length > accountIndex; accountIndex++)
 		{
-			if (!Form1.characterAccountConfig_1[i].bool_25)
+			if (!Form1.characterAccountConfig_1[accountIndex].bool_25)
 			{
 				continue;
 			}
-			switch (int_1)
+			switch (syncCommandCode)
 			{
 			case 1:
 			case 2:
-				Form1.characterAccountConfig_1[i].int_76[4] = int_1;
+				Form1.characterAccountConfig_1[accountIndex].int_76[4] = syncCommandCode;
 				continue;
 			case 3:
 			case 4:
-				Form1.boatDockIndex = int_1;
-				Form1.characterAccountConfig_1[i].bool_55 = Form1.characterAccountConfig_1[i].bool_25;
+				Form1.boatDockIndex = syncCommandCode;
+				Form1.characterAccountConfig_1[accountIndex].bool_55 = Form1.characterAccountConfig_1[accountIndex].bool_25;
 				continue;
 			case 5:
 				new Thread(FormClickNPC.SelectNearestNpcForAllEnabledAccounts).Start();
 				continue;
 			}
-			if (100 <= int_1 && int_1 <= 102)
+			if (100 <= syncCommandCode && syncCommandCode <= 102)
 			{
-				Form1.boatDockIndex = int_1 - 100;
-				CommonUtility.AppendIntIfMissing(ref PhongLangDoBoardingAutomation.int_0, Form1.characterAccountConfig_1[i].int_136);
+				Form1.boatDockIndex = syncCommandCode - 100;
+				CommonUtility.AppendIntIfMissing(ref PhongLangDoBoardingAutomation.int_0, Form1.characterAccountConfig_1[accountIndex].int_136);
 				if (!PhongLangDoBoardingAutomation.bool_0)
 				{
 					PhongLangDoBoardingAutomation.RunQueue();
 				}
 				continue;
 			}
-			switch (int_1)
+			switch (syncCommandCode)
 			{
 			case 104:
 			{
-				for (int j = 0; j < 100; j++)
+				for (int waitIteration = 0; waitIteration < 100; waitIteration++)
 				{
 					if (queuedTownTeleportCharacterId <= 0)
 					{
@@ -517,15 +517,15 @@ internal class CharacterStateSyncCoordinator
 					}
 					Thread.Sleep(1);
 				}
-				queuedTownTeleportCharacterId = Form1.characterAccountConfig_1[i].int_136;
+				queuedTownTeleportCharacterId = Form1.characterAccountConfig_1[accountIndex].int_136;
 				new Thread(UseTownTeleportForQueuedAccount).Start();
 				break;
 			}
 			case 103:
 			{
-				int int_2 = 0;
-				byte[] byte_ = new byte[1] { Convert.ToByte(Form1.characterAccountConfig_1[i].bool_25) };
-				WindowsInteropHelper.WriteProcessMemory(Form1.characterAccountConfig_1[i].int_137, Form1.characterAccountConfig_1[i].uint_16 + GameProcessInteractionHelper.uint_33 * 4, byte_, 1, ref int_2);
+				int bytesWritten = 0;
+				byte[] enabledFlagBuffer = new byte[1] { Convert.ToByte(Form1.characterAccountConfig_1[accountIndex].bool_25) };
+				WindowsInteropHelper.WriteProcessMemory(Form1.characterAccountConfig_1[accountIndex].int_137, Form1.characterAccountConfig_1[accountIndex].uint_16 + GameProcessInteractionHelper.uint_33 * 4, enabledFlagBuffer, 1, ref bytesWritten);
 				break;
 			}
 			}
@@ -534,12 +534,12 @@ internal class CharacterStateSyncCoordinator
 
 	private static void UseTownTeleportForQueuedAccount()
 	{
-		int num = queuedTownTeleportCharacterId;
+		int characterId = queuedTownTeleportCharacterId;
 		queuedTownTeleportCharacterId = 0;
-		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
-		if (0 <= num2)
+		int accountIndex = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterId);
+		if (0 <= accountIndex)
 		{
-			GameAutomationUtility.TryUseTownTeleportItem(Form1.characterAccountConfig_1[num2]);
+			GameAutomationUtility.TryUseTownTeleportItem(Form1.characterAccountConfig_1[accountIndex]);
 		}
 	}
 }

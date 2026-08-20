@@ -1368,137 +1368,137 @@ internal class InventoryItemHelper
 
 	private static void RunInventoryTransferMergeAutomation(int int_2)
 	{
-		CharacterAccountConfig characterAccountConfig_ = default(CharacterAccountConfig);
-		int int_3 = 0;
-		int num = 0;
-		int num2 = 0;
-		int num3 = -1;
-		int num4 = 12000;
-		byte[] array = new byte[4];
-		long num5 = 0L;
-		uint[,] array2 = null;
-		uint num6 = 0u;
-		uint num7 = 0u;
-		uint num8 = 0u;
-		int num9 = 0;
-		int num10 = 0;
-		int num11 = 0;
-		int num12 = 0;
-		int num13 = 0;
+		CharacterAccountConfig accountConfig = default(CharacterAccountConfig);
+		int bytesTransferred = 0;
+		int accountIndex = 0;
+		int accountRefreshCountdown = 0;
+		int previousOperationCode = -1;
+		int sampleSelectionTimeoutMilliseconds = 12000;
+		byte[] fourByteBuffer = new byte[4];
+		long operationStartTicks = 0L;
+		uint[,] entryContainerMappings = null;
+		uint sampleEntryIndex = 0u;
+		uint sourceContainerId = 0u;
+		uint targetContainerId = 0u;
+		int sampleMatchField1 = 0;
+		int sampleMatchField2 = 0;
+		int sampleSignatureValue = 0;
+		int sampleItemWidth = 0;
+		int sampleItemHeight = 0;
 		while (true)
 		{
-			num2--;
+			accountRefreshCountdown--;
 			Thread.Sleep(300);
 			if (CommonUtility.bool_0)
 			{
 				break;
 			}
-			if (num2 <= 0)
+			if (accountRefreshCountdown <= 0)
 			{
-				num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
-				if (num < 0)
+				accountIndex = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
+				if (accountIndex < 0)
 				{
 					break;
 				}
-				num2 = 30;
-				characterAccountConfig_ = Form1.characterAccountConfig_1[num];
+				accountRefreshCountdown = 30;
+				accountConfig = Form1.characterAccountConfig_1[accountIndex];
 			}
-			int num14 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_, GameProcessInteractionHelper.inventoryOperationStateSlot, 4);
-			uint num16;
-			uint num17;
-			if (num14 != 0)
+			int currentOperationCode = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(accountConfig, GameProcessInteractionHelper.inventoryOperationStateSlot, 4);
+			uint inventoryEntryTableBaseAddress;
+			uint itemRecordTableBaseAddress;
+			if (currentOperationCode != 0)
 			{
-				if (num3 != num14)
+				if (previousOperationCode != currentOperationCode)
 				{
-					num3 = num14;
-					num5 = CommonUtility.GetCurrentTicks();
-					array2 = null;
-					string text = string.Empty;
-					switch (num14)
+					previousOperationCode = currentOperationCode;
+					operationStartTicks = CommonUtility.GetCurrentTicks();
+					entryContainerMappings = null;
+					string operationDescription = string.Empty;
+					switch (currentOperationCode)
 					{
 					case 1:
-						text = "ChuyÓn ®å (kÝch th\u00adíc)";
+						operationDescription = "ChuyÓn ®å (kÝch th\u00adíc)";
 						break;
 					case 2:
-						text = "ChuyÓn ®å (cïng lo¹i)";
+						operationDescription = "ChuyÓn ®å (cïng lo¹i)";
 						break;
 					case 3:
-						text = "Gép vËt phÈm";
+						operationDescription = "Gép vËt phÈm";
 						break;
 					}
-					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=yellow>" + text + ": <color=red>B¾t ®Çu..");
-					InventoryItemMemoryHelper.PlaceHeldItemInContainer(characterAccountConfig_, 3u);
+					GameProcessInteractionHelper.PrintGameMessage(accountConfig, "<color=yellow>" + operationDescription + ": <color=red>B¾t ®Çu..");
+					InventoryItemMemoryHelper.PlaceHeldItemInContainer(accountConfig, 3u);
 				}
-				if (num14 == 3)
+				if (currentOperationCode == 3)
 				{
-					RunInventoryItemMergeAutomation(characterAccountConfig_);
-					num5 = 1L;
+					RunInventoryItemMergeAutomation(accountConfig);
+					operationStartTicks = 1L;
 					continue;
 				}
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array, 4, ref int_3);
-				uint num15 = BitConverter.ToUInt32(array, 0);
-				num16 = num15 + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, array, 4, ref int_3);
-				num17 = BitConverter.ToUInt32(array, 0);
-				if (array2 == null)
+				WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, fourByteBuffer, 4, ref bytesTransferred);
+				uint inventoryTableRootPointer = BitConverter.ToUInt32(fourByteBuffer, 0);
+				inventoryEntryTableBaseAddress = inventoryTableRootPointer + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
+				WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, fourByteBuffer, 4, ref bytesTransferred);
+				itemRecordTableBaseAddress = BitConverter.ToUInt32(fourByteBuffer, 0);
+				if (entryContainerMappings == null)
 				{
-					num6 = 0u;
-					num7 = 0u;
-					num8 = 0u;
-					array2 = CollectInventoryEntryContainerMappings(characterAccountConfig_);
-					if (array2 == null)
+					sampleEntryIndex = 0u;
+					sourceContainerId = 0u;
+					targetContainerId = 0u;
+					entryContainerMappings = CollectInventoryEntryContainerMappings(accountConfig);
+					if (entryContainerMappings == null)
 					{
 						goto IL_0390;
 					}
-					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "H·y cÇm vËt phÈm mÉu.");
+					GameProcessInteractionHelper.PrintGameMessage(accountConfig, "H·y cÇm vËt phÈm mÉu.");
 				}
-				if (num7 == 0)
+				if (sourceContainerId == 0)
 				{
-					if (CommonUtility.GetElapsedMilliseconds(num5) <= num4)
+					if (CommonUtility.GetElapsedMilliseconds(operationStartTicks) <= sampleSelectionTimeoutMilliseconds)
 					{
-						int num18 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_, GameProcessInteractionHelper.inventoryOperationStateSlot, 4);
-						if (num18 != num14)
+						int currentOperationCodeCheck = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(accountConfig, GameProcessInteractionHelper.inventoryOperationStateSlot, 4);
+						if (currentOperationCodeCheck != currentOperationCode)
 						{
-							num3 = -1;
+							previousOperationCode = -1;
 							continue;
 						}
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_123.resolvedValue, array, 4, ref int_3);
-						if (BitConverter.ToUInt32(array, 0) == 0)
+						WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_123.resolvedValue, fourByteBuffer, 4, ref bytesTransferred);
+						if (BitConverter.ToUInt32(fourByteBuffer, 0) == 0)
 						{
 							continue;
 						}
-						num6 = GetHeldItemRecordIndex(characterAccountConfig_);
-						for (int i = 0; i < array2.GetLength(0); i++)
+						sampleEntryIndex = GetHeldItemRecordIndex(accountConfig);
+						for (int mappingRowIndex = 0; mappingRowIndex < entryContainerMappings.GetLength(0); mappingRowIndex++)
 						{
-							if (num6 == array2[i, 0])
+							if (sampleEntryIndex == entryContainerMappings[mappingRowIndex, 0])
 							{
-								num7 = array2[i, 1];
+								sourceContainerId = entryContainerMappings[mappingRowIndex, 1];
 								break;
 							}
 						}
-						if (num7 == 0)
+						if (sourceContainerId == 0)
 						{
 							continue;
 						}
-						uint num19 = num16 + num6 * 20;
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num19 + GameConfigurationManager.memorySignatureScanConfig_99.resolvedValue * 4, array, 4, ref int_3);
-						uint num20 = BitConverter.ToUInt32(array, 0);
-						if (num20 != 0)
+						uint sampleInventoryEntryAddress = inventoryEntryTableBaseAddress + sampleEntryIndex * 20;
+						WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, sampleInventoryEntryAddress + GameConfigurationManager.memorySignatureScanConfig_99.resolvedValue * 4, fourByteBuffer, 4, ref bytesTransferred);
+						uint sampleItemRecordIndex = BitConverter.ToUInt32(fourByteBuffer, 0);
+						if (sampleItemRecordIndex != 0)
 						{
-							uint num21 = num17 + num20 * GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue;
-							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_108.resolvedValue, array, 1, ref int_3);
-							num9 = array[0];
-							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_110.resolvedValue, array, 1, ref int_3);
-							num10 = array[0];
-							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num21 + InventoryItemMemoryHelper.uint_1, array, 4, ref int_3);
-							num11 = BitConverter.ToInt32(array, 0);
-							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num21 + InventoryItemMemoryHelper.uint_1 + 4, array, 4, ref int_3);
-							BitConverter.ToInt32(array, 0);
-							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_111.resolvedValue, array, 1, ref int_3);
-							num12 = array[0];
-							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_112.resolvedValue, array, 1, ref int_3);
-							num13 = array[0];
-							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "H·y ®Æt vµo r\u00ad¬ng ®Ých.");
+							uint sampleItemRecordAddress = itemRecordTableBaseAddress + sampleItemRecordIndex * GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue;
+							WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, sampleItemRecordAddress + GameConfigurationManager.memorySignatureScanConfig_108.resolvedValue, fourByteBuffer, 1, ref bytesTransferred);
+							sampleMatchField1 = fourByteBuffer[0];
+							WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, sampleItemRecordAddress + GameConfigurationManager.memorySignatureScanConfig_110.resolvedValue, fourByteBuffer, 1, ref bytesTransferred);
+							sampleMatchField2 = fourByteBuffer[0];
+							WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, sampleItemRecordAddress + InventoryItemMemoryHelper.uint_1, fourByteBuffer, 4, ref bytesTransferred);
+							sampleSignatureValue = BitConverter.ToInt32(fourByteBuffer, 0);
+							WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, sampleItemRecordAddress + InventoryItemMemoryHelper.uint_1 + 4, fourByteBuffer, 4, ref bytesTransferred);
+							BitConverter.ToInt32(fourByteBuffer, 0);
+							WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, sampleItemRecordAddress + GameConfigurationManager.memorySignatureScanConfig_111.resolvedValue, fourByteBuffer, 1, ref bytesTransferred);
+							sampleItemWidth = fourByteBuffer[0];
+							WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, sampleItemRecordAddress + GameConfigurationManager.memorySignatureScanConfig_112.resolvedValue, fourByteBuffer, 1, ref bytesTransferred);
+							sampleItemHeight = fourByteBuffer[0];
+							GameProcessInteractionHelper.PrintGameMessage(accountConfig, "H·y ®Æt vµo r\u00ad¬ng ®Ých.");
 							goto IL_03a2;
 						}
 					}
@@ -1506,169 +1506,169 @@ internal class InventoryItemHelper
 				}
 				goto IL_03a2;
 			}
-			if (num5 > 0L)
+			if (operationStartTicks > 0L)
 			{
-				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "KÕt thóc !");
+				GameProcessInteractionHelper.PrintGameMessage(accountConfig, "KÕt thóc !");
 			}
-			num5 = 0L;
-			num3 = -1;
-			array2 = null;
+			operationStartTicks = 0L;
+			previousOperationCode = -1;
+			entryContainerMappings = null;
 			Thread.Sleep(200);
 			continue;
 			IL_0390:
-			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.inventoryOperationStateSlot, 0, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(accountConfig, GameProcessInteractionHelper.inventoryOperationStateSlot, 0, 4);
 			continue;
 			IL_03a2:
-			if (num8 == 0)
+			if (targetContainerId == 0)
 			{
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num16 + num6 * 20 + GameConfigurationManager.memorySignatureScanConfig_100.resolvedValue - 8, array, 1, ref int_3);
-				if (array[0] == 1)
+				WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, inventoryEntryTableBaseAddress + sampleEntryIndex * 20 + GameConfigurationManager.memorySignatureScanConfig_100.resolvedValue - 8, fourByteBuffer, 1, ref bytesTransferred);
+				if (fourByteBuffer[0] == 1)
 				{
 					continue;
 				}
-				if (array[0] == num7)
+				if (fourByteBuffer[0] == sourceContainerId)
 				{
-					num7 = 0u;
-					num6 = 0u;
+					sourceContainerId = 0u;
+					sampleEntryIndex = 0u;
 					continue;
 				}
-				num8 = array[0];
+				targetContainerId = fourByteBuffer[0];
 			}
 			while (true)
 			{
-				int num22 = 0;
-				int num23 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_);
-				int num24 = 0;
-				uint num25 = 0u;
+				int successfulMoveCount = 0;
+				int inventoryEntryCount = InventoryItemMemoryHelper.GetInventoryEntryCount(accountConfig);
+				int processedEntryCount = 0;
+				uint candidateEntryIndex = 0u;
 				while (true)
 				{
-					num25++;
-					if (num23 <= num24 || GameConfigurationManager.int_1 <= num25)
+					candidateEntryIndex++;
+					if (inventoryEntryCount <= processedEntryCount || GameConfigurationManager.int_1 <= candidateEntryIndex)
 					{
 						break;
 					}
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + GameProcessInteractionHelper.inventoryOperationStateSlot * 4, array, 1, ref int_3);
-					num14 = array[0];
-					if (num14 == 0)
+					WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, accountConfig.uint_16 + GameProcessInteractionHelper.inventoryOperationStateSlot * 4, fourByteBuffer, 1, ref bytesTransferred);
+					currentOperationCode = fourByteBuffer[0];
+					if (currentOperationCode == 0)
 					{
 						goto end_IL_083a;
 					}
-					uint num26 = num16 + num25 * 20;
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num26 + GameConfigurationManager.memorySignatureScanConfig_99.resolvedValue * 4, array, 4, ref int_3);
-					uint num27 = BitConverter.ToUInt32(array, 0);
-					if (num27 == 0)
+					uint candidateInventoryEntryAddress = inventoryEntryTableBaseAddress + candidateEntryIndex * 20;
+					WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, candidateInventoryEntryAddress + GameConfigurationManager.memorySignatureScanConfig_99.resolvedValue * 4, fourByteBuffer, 4, ref bytesTransferred);
+					uint candidateItemRecordIndex = BitConverter.ToUInt32(fourByteBuffer, 0);
+					if (candidateItemRecordIndex == 0)
 					{
 						continue;
 					}
-					uint num28 = num17 + num27 * GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue;
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num28 + GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue - 4, array, 4, ref int_3);
-					if (BitConverter.ToInt32(array, 0) != 0)
+					uint candidateItemRecordAddress = itemRecordTableBaseAddress + candidateItemRecordIndex * GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue;
+					WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, candidateItemRecordAddress + GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue - 4, fourByteBuffer, 4, ref bytesTransferred);
+					if (BitConverter.ToInt32(fourByteBuffer, 0) != 0)
 					{
 						continue;
 					}
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num28 + GameConfigurationManager.memorySignatureScanConfig_107.resolvedValue, array, 1, ref int_3);
-					if (array[0] == 0)
+					WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, candidateItemRecordAddress + GameConfigurationManager.memorySignatureScanConfig_107.resolvedValue, fourByteBuffer, 1, ref bytesTransferred);
+					if (fourByteBuffer[0] == 0)
 					{
 						continue;
 					}
-					num24++;
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num26 + GameConfigurationManager.memorySignatureScanConfig_100.resolvedValue - 8, array, 1, ref int_3);
-					if (array[0] != num7)
+					processedEntryCount++;
+					WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, candidateInventoryEntryAddress + GameConfigurationManager.memorySignatureScanConfig_100.resolvedValue - 8, fourByteBuffer, 1, ref bytesTransferred);
+					if (fourByteBuffer[0] != sourceContainerId)
 					{
 						continue;
 					}
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num28 + GameConfigurationManager.memorySignatureScanConfig_111.resolvedValue, array, 1, ref int_3);
-					uint num29 = array[0];
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num28 + GameConfigurationManager.memorySignatureScanConfig_112.resolvedValue, array, 1, ref int_3);
-					uint num30 = array[0];
-					bool flag = num29 == num12 && num30 == num13;
-					if (num14 == 2)
+					WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, candidateItemRecordAddress + GameConfigurationManager.memorySignatureScanConfig_111.resolvedValue, fourByteBuffer, 1, ref bytesTransferred);
+					uint candidateItemWidth = fourByteBuffer[0];
+					WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, candidateItemRecordAddress + GameConfigurationManager.memorySignatureScanConfig_112.resolvedValue, fourByteBuffer, 1, ref bytesTransferred);
+					uint candidateItemHeight = fourByteBuffer[0];
+					bool candidateMatchesSample = candidateItemWidth == sampleItemWidth && candidateItemHeight == sampleItemHeight;
+					if (currentOperationCode == 2)
 					{
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num28 + GameConfigurationManager.memorySignatureScanConfig_108.resolvedValue, array, 1, ref int_3);
-						int num31 = array[0];
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num28 + GameConfigurationManager.memorySignatureScanConfig_110.resolvedValue, array, 1, ref int_3);
-						int num32 = array[0];
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num28 + InventoryItemMemoryHelper.uint_1, array, 4, ref int_3);
-						int num33 = BitConverter.ToInt32(array, 0);
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num28 + InventoryItemMemoryHelper.uint_1 + 4, array, 4, ref int_3);
-						BitConverter.ToInt32(array, 0);
-						flag = num31 == num9 && num32 == num10 && num33 == num11;
+						WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, candidateItemRecordAddress + GameConfigurationManager.memorySignatureScanConfig_108.resolvedValue, fourByteBuffer, 1, ref bytesTransferred);
+						int candidateMatchField1 = fourByteBuffer[0];
+						WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, candidateItemRecordAddress + GameConfigurationManager.memorySignatureScanConfig_110.resolvedValue, fourByteBuffer, 1, ref bytesTransferred);
+						int candidateMatchField2 = fourByteBuffer[0];
+						WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, candidateItemRecordAddress + InventoryItemMemoryHelper.uint_1, fourByteBuffer, 4, ref bytesTransferred);
+						int candidateSignatureValue = BitConverter.ToInt32(fourByteBuffer, 0);
+						WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, candidateItemRecordAddress + InventoryItemMemoryHelper.uint_1 + 4, fourByteBuffer, 4, ref bytesTransferred);
+						BitConverter.ToInt32(fourByteBuffer, 0);
+						candidateMatchesSample = candidateMatchField1 == sampleMatchField1 && candidateMatchField2 == sampleMatchField2 && candidateSignatureValue == sampleSignatureValue;
 					}
-					if (!flag)
+					if (!candidateMatchesSample)
 					{
 						continue;
 					}
-					uint[] array3 = InventoryItemMemoryHelper.FindFreeItemGridPosition(characterAccountConfig_, num8, num29, num30);
-					if (array3 != null)
+					uint[] targetGridPosition = InventoryItemMemoryHelper.FindFreeItemGridPosition(accountConfig, targetContainerId, candidateItemWidth, candidateItemHeight);
+					if (targetGridPosition != null)
 					{
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num26 + GameConfigurationManager.memorySignatureScanConfig_100.resolvedValue - 4, array, 1, ref int_3);
-						byte b = array[0];
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num26 + GameConfigurationManager.memorySignatureScanConfig_100.resolvedValue, array, 1, ref int_3);
-						byte b2 = array[0];
-						int num34 = 0;
-						int num35 = 0;
+						WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, candidateInventoryEntryAddress + GameConfigurationManager.memorySignatureScanConfig_100.resolvedValue - 4, fourByteBuffer, 1, ref bytesTransferred);
+						byte candidateGridX = fourByteBuffer[0];
+						WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, candidateInventoryEntryAddress + GameConfigurationManager.memorySignatureScanConfig_100.resolvedValue, fourByteBuffer, 1, ref bytesTransferred);
+						byte candidateGridY = fourByteBuffer[0];
+						int moveStartedFlag = 0;
+						int moveRetryCount = 0;
 						while (!CommonUtility.bool_0)
 						{
-							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_123.resolvedValue, array, 1, ref int_3);
-							int num36 = array[0];
-							if (num36 <= 0)
+							WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_123.resolvedValue, fourByteBuffer, 1, ref bytesTransferred);
+							int inventoryOperationState = fourByteBuffer[0];
+							if (inventoryOperationState <= 0)
 							{
-								if (num35 % 8 == 0)
+								if (moveRetryCount % 8 == 0)
 								{
-									GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_, b, b2, num7, b, b2, num7);
+									GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(accountConfig, candidateGridX, candidateGridY, sourceContainerId, candidateGridX, candidateGridY, sourceContainerId);
 								}
-								if (num35 > 60)
+								if (moveRetryCount > 60)
 								{
 									break;
 								}
 								Thread.Sleep(10);
-								num35++;
+								moveRetryCount++;
 								continue;
 							}
-							num34 = 1;
+							moveStartedFlag = 1;
 							break;
 						}
-						if (num34 == 0)
+						if (moveStartedFlag == 0)
 						{
 							continue;
 						}
-						num35 = 0;
+						moveRetryCount = 0;
 						while (!CommonUtility.bool_0)
 						{
-							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_123.resolvedValue, array, 1, ref int_3);
-							if (array[0] != 0)
+							WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_123.resolvedValue, fourByteBuffer, 1, ref bytesTransferred);
+							if (fourByteBuffer[0] != 0)
 							{
-								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num26 + GameConfigurationManager.memorySignatureScanConfig_99.resolvedValue * 4, array, 4, ref int_3);
-								if (BitConverter.ToInt32(array, 0) != 0)
+								WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, candidateInventoryEntryAddress + GameConfigurationManager.memorySignatureScanConfig_99.resolvedValue * 4, fourByteBuffer, 4, ref bytesTransferred);
+								if (BitConverter.ToInt32(fourByteBuffer, 0) != 0)
 								{
-									if (num35 % 8 == 0)
+									if (moveRetryCount % 8 == 0)
 									{
-										GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_, array3[0], array3[1], num8, array3[0], array3[1], num8);
+										GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(accountConfig, targetGridPosition[0], targetGridPosition[1], targetContainerId, targetGridPosition[0], targetGridPosition[1], targetContainerId);
 									}
-									if (num35 > 60)
+									if (moveRetryCount > 60)
 									{
 										break;
 									}
-									num35++;
+									moveRetryCount++;
 									Thread.Sleep(10);
 									continue;
 								}
-								num34 = 0;
+								moveStartedFlag = 0;
 								break;
 							}
-							num34 = 0;
-							num22++;
+							moveStartedFlag = 0;
+							successfulMoveCount++;
 							break;
 						}
-						if (num34 <= 0)
+						if (moveStartedFlag <= 0)
 						{
 							continue;
 						}
-						GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_, b, b2, num7, b, b2, num7);
-						for (num35 = 0; num35 < 100; num35++)
+						GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(accountConfig, candidateGridX, candidateGridY, sourceContainerId, candidateGridX, candidateGridY, sourceContainerId);
+						for (moveRetryCount = 0; moveRetryCount < 100; moveRetryCount++)
 						{
-							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_123.resolvedValue, array, 4, ref int_3);
-							if (BitConverter.ToInt32(array, 0) == 0)
+							WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_123.resolvedValue, fourByteBuffer, 4, ref bytesTransferred);
+							if (BitConverter.ToInt32(fourByteBuffer, 0) == 0)
 							{
 								break;
 							}
@@ -1676,12 +1676,12 @@ internal class InventoryItemHelper
 						}
 						continue;
 					}
-					num3 = -1;
+					previousOperationCode = -1;
 					goto end_IL_083a;
 				}
-				if (num22 <= 0)
+				if (successfulMoveCount <= 0)
 				{
-					num3 = -1;
+					previousOperationCode = -1;
 					break;
 				}
 				continue;
